@@ -17,22 +17,19 @@
       
         let cont = 0;
         let sum = 0;
-
+        str = ""
         do{
-
-            num = Number(prompt("Digite un numero"));
-
-            if(num<0){
-                document.getElementById("pie").innerHTML(`<p>El promedio de los numeros es: ${(sum/cont).toFixed(2)}<p/>`);
-                break
-            }
-            else{
-                document.getElementById("Listado").innerHTML(`<li>${num}<li/>`);
-                sum+=num;
-                cont++;
-            }
-           
+                num = Number(prompt("Digite un numero"));
+                if(num<0){
+                    break
+                }else{
+                    str += `<li>${num}</li> <br>`
+                    sum+=num;
+                    cont++;
+                }   
         }while(true)
+        document.getElementById("Listado").innerHTML= `${str}`;
+        document.getElementById("pie").innerHTML = `<p>El promedio de los numeros es: ${(sum/cont).toFixed(2)}<p/>`;
        
     </script>
     
