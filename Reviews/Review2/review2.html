@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul id="Listado">
+
+    </ul>
+
+    <p id="pie"></p>
+
+    <script>
+      
+        let cont = 0;
+        let sum = 0;
+
+        do{
+
+            num = Number(prompt("Digite un numero"));
+
+            if(num<0){
+                document.getElementById("pie").innerHTML(`<p>El promedio de los numeros es: ${(sum/cont).toFixed(2)}<p/>`);
+                break
+            }
+            else{
+                document.getElementById("Listado").innerHTML(`<li>${num}<li/>`);
+                sum+=num;
+                cont++;
+            }
+           
+        }while(true)
+       
+    </script>
+    
+</body>
+</html>
