@@ -1,0 +1,100 @@
+//console.trace linea de rastreo de linea
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            
+ //  funciones nombradas
+    function cuadratica(a,b,c){
+        let resultado;        
+        let x1,x2;
+        let raiz = b**2-4*a*c
+        if(raiz<0){
+            resultado = NaN;
+        }else{
+            x1 = (-b+ raiz **0.5)/(2*a)
+            x1 = (-b- raiz **0.5)/(2*a)
+            resultado = `${x1} \n ${x2}`
+        }
+
+        
+
+         return  resultado
+     }
+     let a = Number(prompt("Digite al usuario a"))
+     if(a==0){
+         alert("nO ES UNA ECUACION CUADRATICA")
+     }else{
+         let b = Number(prompt("Digite al usuario b"))
+          let c= Number(prompt("Digite al usuario c"))
+          let r = cuadratica(a,b,c);
+          if(r.length>0 || r!= "NaN"){
+                 alert(r)
+          }else{
+             alert("La resouesta no existe en los reales")
+          }
+     }
+    // varios tipos de funciones
+    // funciones declarativas o nombradas
+     function nombredelafuncioon(parametroñ){
+        //  cuerpo dela funcion
+     }
+    // funciones anonimas
+    // no tienen nombre
+    // se asignan a una variable o constante
+    
+     const Nombre  = function(parametro){
+         cuerpo
+         return
+     }
+
+
+    const cuad = function(a,b,c){
+        let resultado;        
+        let x1,x2;
+        let raiz = b**2-4*a*c
+        if(raiz<0){
+            resultado = NaN;
+        }else{
+            x1 = (-b+ raiz **0.5)/(2*a)
+            x1 = (-b- raiz **0.5)/(2*a)
+            resultado = `${x1} \n ${x2}`
+        }
+    }
+
+       
+    // funciones flecha
+     const a = (parametro) =>{
+         cuerpo
+         return
+     }
+
+
+    const r = (a,b,c)=>{
+        let resultado;        
+        let x1,x2;
+         let raiz = b**2-4*a*c
+        if(raiz<0){
+          resultado = NaN;
+          }else{
+           x1 = (-b+ raiz **0.5)/(2*a)
+              x2 = (-b- raiz **0.5)/(2*a)
+              resultado = `${x1} \n ${x2}`
+        }
+
+    }
+
+        
+       
+        
+
+    </script>
+
+    
+</body>
+</html>

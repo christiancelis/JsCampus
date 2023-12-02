@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const leerNota= function(msg){
+            let nota
+            do{
+                nota = Number(prompt(msg))
+                if(isNaN(nota) || nota<0 || nota>5 ){
+                    nota = Number(prompt("error nota debe ser mayor a cero y menor a 5"))
+                }
+                else{
+                    break
+                }
+            }while(true)
+            return nota
+        } 
+
+        function estado(nota1,nota2,nota3){ 
+            let prom = n(nota1 + nota2 +nota3)/3;
+            if(prom>=3.9){
+                return "Estudie"
+            }
+            else{
+                return "Becado"
+            }
+        }
+
+        let nota1 = leerNota("Ingrese la nota 1")
+        let nota2 = leerNota("Ingrese la nota 2")
+        let nota3 = leerNota("Ingrese la nota 3")
+
+        alert(estado(nota1,nota2,nota3))
+    </script>
+    
+</body>
+</html>

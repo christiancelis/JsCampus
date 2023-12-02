@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const agregarAtletas = function(Mayor,saltos){
+            if(Mayor<saltos){
+                return true
+            }
+            else{
+                return false
+            }
+        } 
+        
+        const Premio = function(nombre , saltos){
+            if(saltos>=15.50){
+                alert(nombre + "Ganaste 500 millones")
+            }
+        }
+
+        
+        n = Number(prompt("Digite el numero de atletas"))
+        let NombreGanador = ""
+        let GanadorSaltos = 0
+        let nombrea, numeroa
+
+        for(let i=0;i<n;i++){
+            nombrea = prompt("Digite nombre de atleta")
+            numeroa = Number(prompt("Digite la marca del salto"))
+            validacion = agregarAtletas(GanadorSaltos,numeroa)
+
+            if(validacion===true){
+                NombreGanador = nombrea
+                GanadorSaltos = numeroa
+            }
+        }
+
+        alert("EL NOMBRE DEL GANADOR ES :" + NombreGanador)
+        alert("LOS SALTOS FUERON " + GanadorSaltos)
+        Premio(NombreGanador, GanadorSaltos)
+
+
+    </script>
+    
+</body>
+</html>
