@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+        function LeerNumero(msg){
+            let op=false
+            numero =Number(prompt(msg))
+            while(true){
+                if(isNaN(numero) || numero=="null" || numero===""){
+                    numero=Number(prompt("Error-numero no puede ser vacio o letra"))
+                }
+                else{
+                    op=true
+                }
+
+                if(op===true){
+                    return numero
+                }
+            }
+
+        }
+
+        function menor(min,numero){
+            if(numero<=min){
+                min=numero
+            }
+            return min
+        }
+
+        function maximo(max,numero){
+            if(numero>=max){
+                max=numero
+            }
+            return max
+        }
+
+
+
+        function main(){
+
+            let cont = 0;
+            let sum = 0;
+            let max = 0;
+            let min ="";
+            str = ""
+        do{
+                num = LeerNumero("Digite un numero");
+                if(num===0){
+                    break
+                }else{
+
+                    if(cont===0){
+                        let  min=num;
+                    }else{
+                        min=menor(min,num)
+                        max=maximo(max,num)
+                    }
+                
+                    sum+=num;
+                    cont++;
+                }   
+        }while(true)
+
+        str= `Sumatoria: ${sum} \n Promedio: ${(sum/cont).toFixed(2)} \n Total Valores: ${cont} \n Mayor: ${max} \n Menor: ${min}`
+        
+        alert(str)
+            
+        }
+
+        main()
+
+
+    
+    
+    </script>
+
+    
+    
+</body>
+</html>
