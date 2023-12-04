@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function facturacion(precio, Cantidad, nombre){
+            Total = precio*Cantidad
+            let str= `Nombre: ${nombre} \n Precio: ${precio} \n Cantidad: ${Cantidad} \n Total: ${Total} \n`
+            alert(str)
+            alert(`el total de ${nombre} es ${Total}`)
+            document.write(str)
+        }
+
+        function LeerNombre(msg){
+            let op=false
+            nombre = (prompt(msg))
+            while(true){
+                if(nombre==="null" || nombre==="" || !isNaN(nombre)){
+                    nombre=prompt("Error-nombre no puede ser vacio o ser numero")
+                }
+                else{
+                    op=true
+                }
+
+                if(op===true){
+                    return nombre
+                }
+            }
+
+        }
+
+
+        function LeerPrecio(msg){
+            let op=false
+            precio = Number(prompt(msg))
+            while(true){
+                if(precio<=0 || isNaN(precio)){
+                    precio=Number(prompt("Error-precio no puede ser vacio o ser menor o igual que cero"))
+                }
+                else{
+                    op=true
+                }
+
+                if(op===true){
+                    return precio
+                }
+            }
+
+        }
+
+
+        function LeerCantidad(msg){
+            let op=false
+            cantidad =Number(prompt(msg))
+            while(true){
+                if(isNaN(cantidad) || cantidad<=0){
+                    cantidad=Number(prompt("Error-cantidad no puede ser vacio o ser menor o igual que cero"))
+                }
+                else{
+                    op=true
+                }
+
+                if(op===true){
+                    return cantidad
+                }
+            }
+
+        }
+
+
+        function main(){
+            nombreArticulo = LeerNombre("Ingrese el nombre del articulo: ")
+            precioArticulo = LeerPrecio("Ingrese el precio del articulo: ")
+            cantidadArticulo = LeerCantidad("Ingrese la cantidad del articulo: ")
+            mostrarResultado = facturacion(precioArticulo,cantidadArticulo,nombreArticulo)
+        }
+
+        main()
+
+       
+    </script>
+
+    
+</body>
+</html>
