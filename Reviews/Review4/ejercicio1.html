@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function LeerNumero(msg){
+    let op=false
+    let numero = parseInt(prompt(msg))
+    while(true){
+        if(isNaN(numero) || numero=="null" || numero===""){
+            numero=parseInt(prompt("Error-digite numero entero"))
+        }
+        else{
+            op=true
+        }
+
+        if(op===true){
+            return numero
+        }
+    }
+
+}
+
+function superdigit(num){
+    num = num.toString()
+    if(num.length===1){
+        return Number(num)
+    }
+    else{
+
+        
+        return "a"
+    }
+}
+
+
+function main(){
+
+    let num = LeerNumero("Digite un numero entero")
+    let sd = superdigit(num)
+
+   alert(sd)
+
+}
+
+main()
+
+    </script>
+    
+</body>
+</html>
