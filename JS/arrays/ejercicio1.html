@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let palabras = new Array("Ana","pescado","Aragnido","cat")
+
+        let solocuatroletras = palabras.filter(function(e){
+            if(e.length>=4){return e}
+        } )
+        console.log(solocuatroletras)
+
+//con funcion flecha
+        let solocuatrol = palabras.filter( e => {if(e.length>=4){return e}} )
+        console.log(solocuatrol)
+    </script>
+    
+</body>
+</html>

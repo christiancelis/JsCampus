@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let marcas = new Array(5)
+        marcas = ["Lamborguini"]
+
+        let house = ["1BHK",25000,"2BK","50000"]
+
+
+       
+        //pop elimina el ultimo
+        //shift por delante
+        //unshift agrega uno o mas elementos por delante
+        //push agrega uno o ms elementos al principios
+        //slice-> devuelve una parte del array dentro del rango especifico
+        //delete borra de acuerdo a una posicion especifica
+        //splice agrega o elimina elementos del array dependiendo de un rango
+        //concat une dos arrays y devuelve uno nuevo
+        //join devuelve los elementos en un array en una cadena separa de acuerdo a un patron especifico
+        //indexof busca el indice del priner elemento
+        let arr = ["apple", "banana","orange"]
+        let index = arr.indexof("platano")
+        console.log(index) //-1
+
+//recorrer arays
+//metodo for
+let frutas = new Array("fresa", "Juan", "Carlos", "Yulieth")
+        for(let i=0;i<=frutas.length;i++){
+        console.log(frutas[i])
+        }
+
+//metodo for of
+
+for(const fruta of frutas){
+  console.log(fruta)
+} 
+
+//forEach ejecuta una funcion por cada elemento
+    let ar = [4.6,2.5,2.5,2.5]
+    ar.forEach(e => console.log(e*0.8+1));
+//.map devuelve un array aplicando la funcion a cada elemento
+let curv8 = arr.map(e => e*0.8 +1)
+console.log(curv8)
+//filter devuelve un array con elementos que cumplan con una condicion
+
+let may3 = arr.filter(function(e){
+    if(e>=3) return e
+
+})
+
+console.log(may3)
+
+
+//reduce funcion que ejecuta funcion y devuelve un valor de un array
+
+
+let sumcurv8 = ar.reduce((c,e) => c + (e*0.8+1))
+console.log(sumcurv8.toFixed(2))
+
+
+//clonacion de array
+
+ar = ["a","b","c"]
+cloned = ar.slice()
+
+cloned[1] = "20"
+
+console.log(ar)
+console.log(cloned)
+
+
+    </script>
+    
+</body>
+</html>
