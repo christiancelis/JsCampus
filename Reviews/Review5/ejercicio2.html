@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <th>N° Factura</th>
+            <th>Valor Factura</th>
+        </thead>
+        <tbody id="ctabla">
+        </tbody>
+        
+    </table>
+
+    <button id="af">Agregar Factura</button>
+    <button id="cancelfact">Cancelar Factura</button>
+
+
+<script>
+
+    
+  
+    function LeerValor(msg){
+        let op=false
+        let valor = Number(prompt(msg))
+        while(true){
+            if(isNaN(valor) || valor=="null" || valor==="" || valor<0){
+            valor=Number(prompt("Error- valor no puede ser vacio o menor a cero o diferente a numero"))
+            }
+            else{
+                op=true
+            }
+
+            if(op===true){
+                return numero
+            }
+        }
+    }
+
+
+
+  
+    function LeerNumero(msg,facturas){
+        let op=false
+        let numero = Number(prompt(msg))
+        while(true){
+            if(isNaN(numero) || numero=="null" || numero===""){
+                numero=Number(prompt("Error-digite numero entero"))
+            }
+            else{
+                op=comprobarNumero(numero,facturas)
+            }
+
+            if(op===true){
+                return numero
+            }
+        }
+    }
+
+
+    function comprobarNumero(numero,facturas){
+        alert(facturas.size)
+
+        if(facturas.size===undefined){
+            return true
+        }
+
+        facturas.forEach(function(v,k){
+            if(numero===k){
+                alert("Factura existe")
+                return false
+            }
+        })  
+        return true      
+    }
+
+
+
+
+
+    function printFactura(nFactura,vFactura){
+        let c = document.getElementById("ctabla")
+        let fil = document.createElement("tr")
+        let col1 = document.createElement("td")
+        let col2 = document.createElement("td")
+
+        c.appendChild(fil)
+        col1.textContent = nFactura
+        fil.appendChild(col1)
+        col2.textContent = vFactura
+        fil.appendChild(col2)
+    }
+
+
+
+    const facturas = new Map()
+    let b1 = document.getElementById("af")
+    b1.addEventListener("click",
+    function AgregarFactura(facturas){
+        nFactura = LeerNumero("Digite el numero de la factura",facturas)
+        vFactura = Number(prompt("Digite el valor de la Factura"))
+
+        alert(nFactura)
+        alert(vFactura)
+        alert(facturas)
+
+        printFactura(nFactura,vFactura)
+    })
+
+    console.log(facturas.size)
+ 
+</script>
+
+</body>
+</html>
