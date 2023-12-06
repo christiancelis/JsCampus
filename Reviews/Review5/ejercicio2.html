@@ -23,7 +23,7 @@
     </table>
 
     <button id="af">Agregar Factura</button>
-    <button id="cancelfact">Cancelar Factura</button>
+    <button id="cfact">Cancelar Factura</button>
 
 
 <script>
@@ -56,11 +56,10 @@
         while(true){
             if(isNaN(numero) || numero=="null" || numero===""){
                 numero=Number(prompt("Error-digite numero entero"))
+            }else{
+                op=true
             }
-            else{
-                op=comprobarNumero(numero,facturas)
-            }
-
+         
             if(op===true){
                 return numero
             }
@@ -69,8 +68,6 @@
 
 
     function comprobarNumero(numero,facturas){
-        alert(facturas.size)
-
         if(facturas.size===undefined){
             return true
         }
@@ -78,11 +75,36 @@
         facturas.forEach(function(v,k){
             if(numero===k){
                 alert("Factura existe")
-                return false
+                return true
             }
         })  
         return true      
     }
+
+
+    function ELiminarnumero(numero,facturas){
+        if(facturas.size===undefined){
+            alert("No hay facturas para eliminar")
+            return 0
+        }
+
+        facturas.forEach(function(v,k){
+            if(numero===k){
+                alert("Factura existe")
+                facturas.delete(k);
+                ELiminarFactura(k,v,facturas)
+                return true
+            }
+        })  
+        alert("Factura no existe")     
+    }
+
+    
+
+    function ELiminarFactura(k,v,facturas){
+
+    }
+
 
 
 
@@ -101,23 +123,37 @@
         fil.appendChild(col2)
     }
 
+    function addFact(facturas){
+        nFactura = LeerNumero("Digite el numero de la factura",facturas)
+        vFactura = Number(prompt("Digite el valor de la Factura"))
+        printFactura(nFactura,vFactura)
+        facturas.set(nFactura,vFactura)
+    }
+
+    function deleteFact(facturas){
+        nFactura = LeerNumero("Digite el numero de la factura a eliminar",facturas)
+        comp = ELiminarnumero(nFactura,facturas)
+        if(comp===true){
+
+        }
+
+    }
 
 
     const facturas = new Map()
     let b1 = document.getElementById("af")
-    b1.addEventListener("click",
-    function AgregarFactura(facturas){
-        nFactura = LeerNumero("Digite el numero de la factura",facturas)
-        vFactura = Number(prompt("Digite el valor de la Factura"))
+    let b2 = document.getElementById("cfact")
 
-        alert(nFactura)
-        alert(vFactura)
-        alert(facturas)
-
-        printFactura(nFactura,vFactura)
+    b1.addEventListener("click",function(){
+       addFact(facturas)
     })
 
-    console.log(facturas.size)
+    b2.addEventListener("click",function(){
+       deleteFact(facturas)
+    })
+
+
+
  
 </script>
 
