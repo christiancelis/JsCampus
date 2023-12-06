@@ -26,15 +26,50 @@
 
 }
 
+function rellenarNumero(num,lista){
+    for(let i=0;i<num.length;i++){
+        lista.push(num[i])
+    }
+    return lista
+}
+
 function superdigit(num){
+    let lista = new Array()
+    let sumN=0
     num = num.toString()
+    let cont=0
+
     if(num.length===1){
         return Number(num)
     }
-    else{
+    else{   
+        nlista = rellenarNumero(num,lista)
 
+        do{
+            
+            sumN=0
+            sumN=nlista.reduce((s,e)=> Number(s)+(Number(e)))
+            sumN=sumN.toString()
+            cont++
+           
+            if(sumN.length>1){
+                
+                lista = []
+                nlista = rellenarNumero(sumN,lista)
+                 
+            }
+
+     
         
-        return "a"
+            if(sumN.length===1){
+                cont++
+                alert(`k= ${cont}`)
+                return sumN
+            }
+        }while(true)
+        
+      
+           
     }
 }
 
@@ -43,9 +78,7 @@ function main(){
 
     let num = LeerNumero("Digite un numero entero")
     let sd = superdigit(num)
-
-   alert(sd)
-
+    alert(`El super digito de ${num} es:  ${sd}`)
 }
 
 main()
