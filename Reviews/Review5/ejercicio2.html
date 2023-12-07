@@ -99,11 +99,13 @@
         alert("Factura no existe")     
     }
 
-    
 
     function ELiminarFactura(k,v,facturas){
-
-    }
+        a = document.querySelectorAll("#col1")
+        a.forEach( item=>{
+            console.log(item)
+        })
+     }
 
 
 
@@ -115,9 +117,11 @@
         let fil = document.createElement("tr")
         let col1 = document.createElement("td")
         let col2 = document.createElement("td")
-
+        
+        c.setAttribute("class","fi")
         c.appendChild(fil)
         col1.textContent = nFactura
+        col1.setAttribute("class",".col1")
         fil.appendChild(col1)
         col2.textContent = vFactura
         fil.appendChild(col2)
@@ -133,10 +137,6 @@
     function deleteFact(facturas){
         nFactura = LeerNumero("Digite el numero de la factura a eliminar",facturas)
         comp = ELiminarnumero(nFactura,facturas)
-        if(comp===true){
-
-        }
-
     }
 
 
