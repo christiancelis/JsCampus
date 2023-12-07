@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const persona ={
+            nombre:"dani",
+            edad: "30",
+            esTrabajador: true,
+            familia:["Miguel","Maria"],
+            direccion:{
+                calle:"Calle de los estudiantes",
+                ciudad:"Bucaramanga",
+                numero: 13
+            },
+            caminar:function(){
+                console.log(this.nombre + " "+ "está caminando--")
+            }
+
+        }
+
+        persona.caminar()
+        console.log(persona)
+
+        persona.nombre = "Daniela"
+        console.log(persona.nombre)
+        persona.caminar()
+
+        //convertir un objeto a json
+        // JSON.stringify
+
+        const cadenaPersona = JSON.stringify(persona)
+        console.log(cadenaPersona)
+
+        //cadena json a objeto
+        //JSON.parse()
+
+        const objetopers = JSON.parse(cadenaPersona)
+        console.log(objetopers)
+
+    </script>
+    
+</body>
+</html>
