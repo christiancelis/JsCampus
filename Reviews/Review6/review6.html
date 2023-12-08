@@ -48,7 +48,7 @@
         for(let i=0;i<=999;i++){
             let word = leerPalabra("Digite una palabra")
 
-            if(i>0){
+            if(i!=0){
                 op=leerOpcion("Desea continuar? si:0 no:1")
                 if(op===1){
                     return words
@@ -63,11 +63,9 @@
 
     function ComprobarPrefijo(words,prefi){
         cp = words.reduce(function(sum,wd){
-            if(wd.startsWith(prefi)){
-                sum++
-            }
+            console.log(sum)
+            console.log(wd)
         })
-
         return cp
     }
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="">
+        <label for="nombre">NOmbre:</label>
+        <input type="text"  name="nombre" id="nombre">
+        
+    <br>
+
+    <label for="edad">Edad:</label>
+    <input type="number" name="edad",id="edad">
+    
+    </form>
+    <button onclick="capturarForm()">Enviar</button>
+
+
+
+    <script>
+
+        function capturarForm(){
+            const form = document.querySelector("form")
+            const formData = new FormData(form)
+            for(const e of formData){
+                console.log(e)
+            }
+            formData.append("nombre","Oscar")
+            const nombres = formData.getAll("nombre")
+            console.log(nombres)
+        }
+
+        //desctructuración
+
+        a=3;
+        b=7;
+
+        [a,b] = [b,a]
+
+        console.log(a,b)
+
+
+
+        const person ={
+            nombre:"dani",
+            edad: "30"
+         }
+        
+         const{nombre,edad} = person
+
+
+    //clonacion de objetos
+
+    const persona ={
+            nombre:"dani",
+            edad: "30",
+            esTrabajador: true,
+            familia:["Miguel","Maria"],
+            direccion:{
+                calle:"Calle de los estudiantes",
+                ciudad:"Bucaramanga",
+                numero: 13
+            },
+            caminar:function(){
+                console.log(this.nombre + " "+ "está caminando--")
+            }
+
+        }
+    
+    
+        const clonedPerson = Object.assign({},persona)
+        console.log(clonedPerson)
+
+
+        const clonedPerso2 = {...persona}
+        console.log(clonedPerson2)
+
+        
+
+ 
+    </script>
+    
+</body>
+</html>
