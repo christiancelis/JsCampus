@@ -29,28 +29,40 @@
     <script>
         let articulos = new Map([[1,"Lapiz"],[2,"Cuadernos"],[3,"Borrador"],[4,"Calculadora"],[5,"Escuadra"]])
         let valores = new Map([[1,2500],[2,3800],[3, 1200],[4,35000],[5,3700]])
+        let val = []
+
+        
+
+        for([v,k] of valores){
+
+            articulos.set(v,k)
+        }
+
+        console.log(articulos)
+
 
         
         
-        articulos.forEach(function(v,k){
-            ctb = document.getElementById("ctable")
-            tr1 = document.createElement("tr")
-            tr1.setAttribute("id", "ftb");
-            td1 = document.createElement("td")
-            td2 = document.createElement("td")
-            ctb.appendChild(tr1)
-            td1.textContent = k
-            tr1.appendChild(td1)
-            td2.textContent = v
-            tr1.appendChild(td2)
-        })
+        // articulos.forEach(function(v,k){
+        //     ctb = document.getElementById("ctable")
+        //     tr1 = document.createElement("tr")
+        //     tr1.setAttribute("id", "ftb");
+        //     td1 = document.createElement("td")
+        //     td2 = document.createElement("td")
+        //     ctb.appendChild(tr1)
+        //     td1.textContent = k
+        //     tr1.appendChild(td1)
+        //     td2.textContent = v
+        //     tr1.appendChild(td2)
+        //     td3 = document.createElement("td")
+        //     td3.textContent = v[2]
+        //     ft.appendChild(td3)
+        // })
 
-        valores.forEach(function(v,k){
-            ft = document.querySelector("tr")
-            td3 = document.createElement("td")
-            td3.textContent = v
-            ft.appendChild(td3)
-        })
+        // valores.forEach(function(v,k){
+        //     ft = document.querySelector("#ftb")
+           
+        // })
         
     </script>
 
