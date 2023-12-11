@@ -35,7 +35,7 @@
         articulos.forEach(function(v,k){
             ctb = document.getElementById("ctable")
             tr1 = document.createElement("tr")
-            tr1.setAttribute("class", "ftb");
+            tr1.setAttribute("id", "ftb");
             td1 = document.createElement("td")
             td2 = document.createElement("td")
             ctb.appendChild(tr1)
@@ -46,7 +46,7 @@
         })
 
         valores.forEach(function(v,k){
-            ft = document.getElementsByClassName("ftb")
+            ft = document.querySelector("tr")
             td3 = document.createElement("td")
             td3.textContent = v
             ft.appendChild(td3)

@@ -107,10 +107,17 @@
             
             let cont=0
             cp = words.reduce(function(sum,wd){
+
+                if(sum!=undefined && sum.startsWith(prefi)){
+                    cont++
+                }
+
                 if(wd.startsWith(prefi)){
                     cont++
                 }
             })
+
+            console.log(words)
 
             resp = document.getElementById("resp")
             resp.textContent = `there are ${cont} strings that contain ${prefi} as a prefix`
