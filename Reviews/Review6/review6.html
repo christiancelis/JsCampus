@@ -6,7 +6,29 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>App Comprobar prefijo en lista</h1>
+    <form id="f1" action="">
+        <label for="fpalabra">Digite palabra</label>
+        <input type="text" placeholder="Digite una palabra" name="fpalabra" id="fpalabra">
+    </form>
+    <button id="bcargar" onclick="main()">Cargar Palabra</button>
+
+    <h1>Palabras Agregadas</h1>
+    <ul id="lpalabras">
+
+    </ul>
+
+    <form id="f2" action="">
+        <label for="prefi">Digite el Prefijo</label>
+        <input type="text" placeholder="Digite un prefijo" name="prefi" id="prefi">
+    </form>
+    <button id="btn2" onclick="ComprobarPrefijo()">Comprobar prefijo</button>
+
+    <p id="resp"> </p>
+
     <script>
+
+        const words = new Array()
            
         function leerPalabra(msg){
             let op=false
@@ -45,42 +67,66 @@
 
 
     function AgregarPalabras(words){
-        for(let i=0;i<=999;i++){
-            let word = leerPalabra("Digite una palabra")
+        let f1 = document.getElementById("f1")
+        let fdata = new FormData(f1)
+        let pal = ""
 
-            if(i!=0){
-                op=leerOpcion("Desea continuar? si:0 no:1")
-                if(op===1){
-                    return words
-                }
-                else{
-                    words.push(word)
-                }
-            }
+      for(let e of fdata){
+        pal = e[1]
+      }
+        
+      let i = document.getElementById("fpalabra")
+        i.value = ""
+        let lord = document.getElementById("lpalabras")
+        let lis = document.createElement("li")
+        lord.appendChild(lis)
+        lis.textContent = pal
+        words.push(pal)
+      
+      console.log(words)
+    }
+
+
+    function Comp(words){
+
+        if(words.length<2){
+            let i = document.getElementById("prefi")
+            i.value = ""
+            alert("Para Comprobar prefijo debe haber mas de dos palabras")
         }
-        return words
+        else{
+            let f2 = document.getElementById("f2")
+            let fdat = new FormData(f2)
+            let prefi = ""
+            for(let e of fdat){
+                prefi = e[1]
+            }
+
+            let pref = document.getElementById("prefi")
+            pref.value = ""
+            
+            let cont=0
+            cp = words.reduce(function(sum,wd){
+                if(wd.startsWith(prefi)){
+                    cont++
+                }
+            })
+
+            resp = document.getElementById("resp")
+            resp.textContent = `there are ${cont} strings that contain ${prefi} as a prefix`
+        }
+
+      
     }
 
-    function ComprobarPrefijo(words,prefi){
-        cp = words.reduce(function(sum,wd){
-            console.log(sum)
-            console.log(wd)
-        })
-        return cp
+    function ComprobarPrefijo(){
+        Comp(words)
     }
-
-
-
+    
     function main(){
-        const words = new Array()
         AgregarPalabras(words)
-        prefi = leerPalabra("Digite un prefijo")
-        comp = ComprobarPrefijo(words,prefi)
-        alert(`there are ${comp} strings that contain ${prefi} as a prefix`)
-        return
     }
 
-    main()
     </script>
     
 </body>
