@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li{
+            margin: 4px;
+            width: 100wh;
+            text-align :center;
+            height: 30px;
+            text-decoration: none;
+            list-style: none;
+            font-size: 22px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Asincronia</h1>
+    <ul id="li-elements">
+    
+    </ul>
+
+    <script>
+
+          
+           AS =  setTimeout(function(){
+                let AS = crearelemeneto("A",1)
+                return AS
+            } ,0*1000)
+            console.log(AS)
+
+            BS = setTimeout(function(){
+                let BS = crearelemeneto("B",2)
+                return BS
+            } ,(0)*1000)
+            console.log(BS)
+
+            CS = setTimeout(function(){
+                let CS = crearelemeneto("C",3)
+                return CS
+            } ,(AS+5)*1000)
+            console.log(CS)
+            
+            DS = setTimeout(function(){
+                DS = crearelemeneto("D",4) 
+                return DS
+            } ,(AS+0)*1000)
+            console.log(DS)
+
+            ES = setTimeout(function(){
+                ES = crearelemeneto("E",5)
+                return ES
+            } ,(DS+2)*1000)
+            console.log(ES)
+
+            
+            FS = setTimeout(function(){
+                FS = crearelemeneto("F",6)
+                return FS
+            } ,(BS+7)*1000)
+            console.log(FS)
+        
+
+            GS = setTimeout(function(){
+                GS = crearelemeneto("G",7)
+                return GS
+            } ,(ES+2)*1000)
+            console.log(GS)
+
+            HS = setTimeout(function(){
+                HS = crearelemeneto("H",8)
+                return HS
+            } ,(GS+3)*1000)
+            console.log(HS)
+
+        function crearelemeneto(letra,num,sg){
+            let now = new Date();
+            u = document.getElementById("li-elements")
+            l = document.createElement("li")
+            l.textContent = `${letra}[Enviado de ${num}] aparecio en ` + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds()
+            u.appendChild(l)
+            return now.getSeconds()
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
