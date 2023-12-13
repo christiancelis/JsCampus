@@ -101,16 +101,16 @@
 
 
     function ELiminarFactura(k,v,facturas){
-        a = document.querySelectorAll("#col1")
+        a = document.querySelectorAll(".col1")
         a.forEach( item=>{
-            console.log(item)
+            if(Number(item.textContent)===Number(k)){
+                item.closest("tr").remove()
+            }
         })
+        return
      }
 
-
-
-
-
+     
 
     function printFactura(nFactura,vFactura){
         let c = document.getElementById("ctabla")
@@ -121,7 +121,7 @@
         c.setAttribute("class","fi")
         c.appendChild(fil)
         col1.textContent = nFactura
-        col1.setAttribute("class",".col1")
+        col1.setAttribute("class","col1")
         fil.appendChild(col1)
         col2.textContent = vFactura
         fil.appendChild(col2)
