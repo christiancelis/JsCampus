@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li{
+            margin: 4px;
+            width: 100wh;
+            text-align :center;
+            height: 30px;
+            text-decoration: none;
+            list-style: none;
+            font-size: 22px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Asincronia con Promesas</h1>
+    <ul id="li-elements">
+    </ul>
+
+
+    <script>
+
+function crearelemeneto(letra,num){
+            let now = new Date();
+            u = document.getElementById("li-elements")
+            l = document.createElement("li")
+            l.textContent = `${letra}[Enviado de ${num}] aparecio en ` + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds()
+            u.appendChild(l)
+            return now.getSeconds()
+        }
+
+        let min=2
+        let max=5
+        let aleatorio = Math.floor((Math.random() * (max - min + 1)) + min);
+
+        let D = new Promise(()=>{
+            setTimeout(function(){DS = crearelemeneto("D",4) } ,aleatorio*1000)
+        })
+
+
+
+        let E = new Promise(()=>{
+            setTimeout(function(){ES = crearelemeneto("E",5)} ,(aleatorio+2)*1000)
+        })
+
+
+        let A = new Promise(()=>{
+            setTimeout(function(){ crearelemeneto("A",1)} ,0*1000)
+        })
+
+        let B = new Promise(()=>{
+            setTimeout(function(){ let BS = crearelemeneto("B",2)} ,(0)*1000)
+        })
+
+        let F = new Promise(()=>{
+            setTimeout(function(){FS = crearelemeneto("F",6)} ,(7)*1000)
+        })
+
+
+        let C = new Promise(()=>{
+            setTimeout(function(){let CS = crearelemeneto("C",3)} ,5*1000)
+        })
+
+        let G = new Promise(()=>{
+            setTimeout(function(){GS = crearelemeneto("G",7)} ,(aleatorio+4)*1000)        
+        })
+
+
+        let H = new Promise(()=>{
+            setTimeout(function(){HS = crearelemeneto("H",8)} ,(aleatorio+7)*1000)
+        })
+
+
+    Promise.all(A,B,C,D,E,F,G,H)
+    .then((values)=>{
+        console.log("Los valores de la promesa son:" + values.values)
+    })
+    .catch((error)=>{
+        console.log("ocurrio un error con a promesa: " + error.message)
+    })
+
+
+
+
+
+
+
+    </script>
+
+
+
+    
+</body>
+</html>
