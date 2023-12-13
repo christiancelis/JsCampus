@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        fechaPactada = prompt("Digite la fecha pactada en formato : dia/mes/año")
+        fechaEntrega = prompt("Digite la fecha de entrega en formato : dia/mes/año")
+
+        let fpact = new Date()
+        
+        fp = fechaPactada.split("/")
+
+
+        if(fp[0].startsWith(0)){
+            fpact.setDate(fp[0].slice(-1))
+        }
+        
+        fpact.setMonth(fp[1])
+        fpact.setFullYear(fp[2])
+
+
+        let fE = new Date()
+        fe = fechaEntrega.split("/")
+
+        if(fe[0].startsWith(0)){
+            fE.setDate(fe[0].slice(-1))
+        }
+
+        fE.setMonth(fe[1])
+        fE.setFullYear(fe[2])
+
+        let millis = fE.getTime() -fpact.getTime()
+            days =  (millis/(1000*60*60*24))
+
+        let diap =  fE.getDate()- fpact.getDate() 
+        console.log(days)
+
+        if(diap<=3){
+            multa = days*7000
+            alert("Se paso  "+ days + "Debe pagar " + multa)
+        }else{
+            multa= 10000
+            alert("Se paso: "+ days + " dias, Debe pagar " + multa + " y tiene una sancion por 6 meses ")
+        }
+
+
+
+
+    </script>
+    
+</body>
+</html>

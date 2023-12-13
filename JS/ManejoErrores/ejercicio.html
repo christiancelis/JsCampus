@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function validarcorreo(){
+            try {
+                correo = prompt("Correo Electronico Subscripcion")
+                if(!correo.includes("@") && !correo.includes(".")){
+                    throw new Error("Correo invalido digite nuevamente")
+                }else{
+                    cor = correo.split("@")
+                    if(!cor.length===2){
+                        throw new Error("Correo no valido")
+                    }else{
+                        alert(`${correo} es un correo valido`)
+                    }
+                }
+            } catch (error) {
+                console.log(error.message)
+            }   
+
+        }   
+        
+
+       validarcorreo()
+        
+        
+    </script>
+</body>
+</html>
