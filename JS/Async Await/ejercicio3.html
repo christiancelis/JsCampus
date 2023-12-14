@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Pokemons</h1>
+
+    <table>
+        <thead>
+            <th>ID</th>
+            <th>NOMBRE</th>
+            <th>IMAGEN FRONTAL</th>
+        </thead>
+        <tbody id="tb">
+
+        </tbody>
+    </table>
+
+
+    <script>
+
+    async function getp(idpokemon){
+        const url=  `https://pokeapi.co/api/v2/pokemon/${idpokemon}`;
+        const respuesta = await fetch(url)
+        if(!respuesta.ok){
+            throw new Error("Error, pokemon no existe");
+        }
+        const json = await respuesta.json()
+        return(json);
+    }
+
+
+    (async function(){
+        for(let i=1;i<=100;i++){
+            try {           
+                let a = await getp(i)
+                let nombre = a.name
+                let url = a.sprites.front_default
+                let id = i
+                CrearElemento(id,nombre,url)
+            }catch (error) {
+            console.log(error.message)
+            }
+
+           
+
+    }
+    })();
+
+
+        function CrearElemento(id,nom,imgft){
+            tb = document.getElementById("tb")
+            fi = document.createElement("tr")
+            let col1 = document.createElement("td")
+            let col2 = document.createElement("td")
+            let col3 = document.createElement("td")
+            let img = document.createElement("img")
+            
+            img.setAttribute("src",imgft)
+            col1.textContent = id
+            col2.textContent = nom
+
+            fi.appendChild(col1)
+            fi.appendChild(col2)
+            fi.appendChild(col3)
+            col3.appendChild(img)
+            tb.appendChild(fi)
+        }
+    </script>
+    
+</body>
+
+
+
+</html>
