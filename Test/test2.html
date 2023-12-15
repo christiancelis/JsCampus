@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+    <h1>EL CLUB DE LA PELEA POKEMON</h1>
+    <article>
+        <button id="userb">Mi Pokemón</button>
+        <section id="miPK">
+            <img id="ipk"" src="a" alt="">
+            <ul id="list">
+            </ul>
+        </section>
+    </article>
+    <button   id="cpub">Fight</button>
+    <article>
+        <button disabled="true" >CPU Pokemon</button>
+        <section id="cpupk">
+            <img id="cipk"" src="a" alt="">
+            <ul id="clist">
+        </section>
+    </article>
+
+    <div id="infogame"></div>
+
+    <script>
+
+    async function getp(idpokemon){
+        const url=  `https://pokeapi.co/api/v2/pokemon/${idpokemon}`;
+        const respuesta = await fetch(url)
+        if(!respuesta.ok){
+            throw new Error("Error, pokemon no existe");
+        }
+        const json = await respuesta.json()
+        return(json);
+    }
+
+    mipk = document.getElementById("userb")
+
+    mipk.addEventListener("click",function(){
+        escojerpkuser()
+    })
+
+    cpupk = document.getElementById("cpub")
+
+cpupk.addEventListener("click",function(){
+    escojercpu()
+})
+
+
+    let poke = []
+    let poke2 = []
+
+
+    async function escojerpkuser(){
+        poke = []
+        let min=1
+        let max=806
+        let aleatorio = Math.floor((Math.random() * (max - min + 1)) + min);
+            try {
+
+                let a = await getp(aleatorio)
+                poke.push(a.name)
+                poke.push(a.sprites.front_default)
+                poke.push(aleatorio)
+               
+                let nHp = a.stats[0].stat.name
+                let Hp = a.stats[0].base_stat
+
+                poke.push(nHp)
+                poke.push(Hp)
+
+                let nAtack = a.stats[1].stat.name
+                let Atack = a.stats[1].base_stat
+
+                poke.push(nAtack)
+                poke.push(Atack)
+
+                let nDefense = a.stats[2].stat.name
+                let Defense = a.stats[2].base_stat
+
+                poke.push(nDefense)
+                poke.push(Defense)
+
+                let nSpeed = a.stats[5].stat.name
+                let Speed = a.stats[5].base_stat
+
+                poke.push(nSpeed)
+                poke.push(Speed)
+               
+               
+            borrarval()
+            CrearElemento(poke)
+            }catch (error) {
+            console.log(error.message)
+            }
+    }
+
+
+    async function escojercpu(){
+
+        if(poke.length===0){
+            alert("Escoja un pokemon")
+            return
+        }
+
+        let min=1
+        let max=806
+        let aleatorio = Math.floor((Math.random() * (max - min + 1)) + min);
+            try {
+
+                let a = await getp(aleatorio)
+                console.log(a)
+                poke2.push(a.name)
+                poke2.push(a.sprites.front_default)
+                poke2.push(aleatorio)
+               
+                let nHp = a.stats[0].stat.name
+                let Hp = a.stats[0].base_stat
+
+                poke2.push(nHp)
+                poke2.push(Hp)
+
+                let nAtack = a.stats[1].stat.name
+                let Atack = a.stats[1].base_stat
+
+                poke2.push(nAtack)
+                poke2.push(Atack)
+
+                let nDefense = a.stats[2].stat.name
+                let Defense = a.stats[2].base_stat
+
+                poke2.push(nDefense)
+                poke2.push(Defense)
+
+                let nSpeed = a.stats[5].stat.name
+                let Speed = a.stats[5].base_stat
+
+                poke2.push(nSpeed)
+                poke2.push(Speed)
+
+            Crear2(poke2)
+            batalla()
+            }catch (error) {
+            console.log(error.message)
+            }
+    }
+
+    function borrarval(){
+        i = document.getElementById("ipk")
+        li = document.querySelectorAll("#lipk")
+       im = document.getElementById("ipk")
+       let sr = "a"
+       im.setAttribute("src",sr)
+        li.forEach(element => {
+            element.remove()
+        });
+    }
+
+        function CrearElemento(pk){
+            console.log(pk)
+            content = document.getElementById("miPK")
+            ul =  document.getElementById("list")
+            im = document.getElementById("ipk")
+            im.setAttribute("src",pk[1])
+            li1 = document.createElement("li")
+            li2 = document.createElement("li") 
+            li3 = document.createElement("li") 
+            li4 = document.createElement("li")
+            li5 = document.createElement("li")   
+          
+            li1.textContent = `Name:${pk[0]}`
+            li1.setAttribute("id","lipk")
+            li2.textContent = `Hp:${pk[4]}`
+            li2.setAttribute("id","lipk")
+            li3.textContent = `Attack:${pk[6]}`
+            li3.setAttribute("id","lipk")
+            li4.textContent = `Defense:${pk[8]}`
+            li4.setAttribute("id","lipk")
+            li5.textContent = `Speed:${pk[10]}`
+            li5.setAttribute("id","lipk")
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+            ul.appendChild(li4)
+            ul.appendChild(li5)
+
+        }
+
+        function Crear2(pk){
+            console.log(pk)
+            content = document.getElementById("miPK")
+            ul =  document.getElementById("clist")
+            im = document.getElementById("cipk")
+            im.setAttribute("src",pk[1])
+            li1 = document.createElement("li")
+            li2 = document.createElement("li") 
+            li3 = document.createElement("li") 
+            li4 = document.createElement("li")
+            li5 = document.createElement("li")   
+          
+            li1.textContent = `Name:${pk[0]}`
+            li1.setAttribute("id","clipk")
+            li2.textContent = `Hp:${pk[4]}`
+            li2.setAttribute("id","clipk")
+            li3.textContent = `Attack:${pk[6]}`
+            li3.setAttribute("id","clipk")
+            li4.textContent = `Defense:${pk[8]}`
+            li4.setAttribute("id","clipk")
+            li5.textContent = `Speed:${pk[10]}`
+            li5.setAttribute("id","clipk")
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+            ul.appendChild(li4)
+            ul.appendChild(li5)
+
+
+            mipk = document.getElementById("userb")
+            mipk.setAttribute("disabled","true")
+
+            cpupk = document.getElementById("cpub")
+            cpub.setAttribute("disabled","true")
+
+
+        }
+
+
+function ataque(a,b){
+    setTimeout(() => {
+        p = document.createElement("p")
+        p.textContent = `Turno de: ${a[0]}`
+        p1 = document.createElement("p")
+        p1.textContent = `Ataque: ${a[6]}`
+        p3 = document.createElement("p")
+        p3.textContent = `Hp Restante: ${b[4]}`
+        info.appendChild(p)
+        info.appendChild(p1)
+        info.appendChild(p3)
+        
+    }, 5000);
+    
+}
+
+
+function batalla(){
+    info = document.getElementById("infogame")
+
+
+    do{
+        console.log("estoy aqui")
+    let turno = poke[10] - poke2[10]
+        console.log(poke[10])
+        console.log(poke2[10])
+    if(poke[10]>poke2[10]){
+       for(let i=0;i<turno;i++){
+       
+        poke2[4] = poke2[4] - (poke2[8]*(1+(poke2[10]/100))-poke[6])
+            ataque(poke,poke2)
+            if(poke2[4]<=0){
+                return alert("muerto poke2")
+            }
+
+       }
+
+       poke[4] = poke[4] - (poke[8]*(1+(poke[10]/100))-poke2[6])
+   
+       ataque(poke2,poke)
+
+       if(poke[4]<=0){
+                return alert("muerto poke")
+            }
+
+    }
+    else{
+        for(let i=0;i<turno;i++){
+        poke[4] = poke[4] - (poke[8]*(1+(poke[10]/100))-poke2[6])
+        ataque(poke2,poke)
+
+
+       if(poke[4]<=0){
+                return alert("muerto poke")
+            }
+       }
+
+       poke2[4] = poke2[4] - (poke2[8]*(1+(poke2[10]/100))-poke[6])
+
+       ataque(poke,poke2)
+  
+       
+       if(poke2[4]<=0){
+                return alert("muerto poke2")
+            }
+    }
+
+    }while(poke[4]>0 || poke2[4]>0)
+}
+
+
+
+       
+
+    </script>
+    
+</body>
+</html>
