@@ -86,7 +86,7 @@ async function Batalla(){
 
         if(Pokemon2[3]<=0){
             await delay(5000) 
-            MostrarGanador(2)
+            MostrarGanador(1)
             return
         }
         
