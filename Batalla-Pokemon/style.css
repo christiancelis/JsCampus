@@ -89,9 +89,19 @@ img{
 
 #infob1,#infob2{
     margin: 10px;
-    width: 20px;
-    height: 20px;
-    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    width: auto;
+    height: auto;
+    background-color: rgb(253, 253, 253,0.8);
+    color: rgb(124, 124, 208);
+    font-size: 24px;
+    font-weight: 700;
+    font-family:monospace;
+}
+
+#infob1 span ,#infob2 span{
+    color: red;
 }
 
 #ganador2, #ganador1{
@@ -104,5 +114,7 @@ img{
     border: 2px solid black;
     display: none;
 }
+
+
 
 
