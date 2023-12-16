@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .resaltado{
+            color : red;
+            font-size: 2px;
+        }
+    </style>
+</head>
+<body>
+    <p class=".resaltado">A</p>
+    <div class="micl"></div>
+    <div class="micl"></div>
+    <div class="micl" onclick=""></div>
+    <a id="mienlace" href="https://www.ejemplo.com" target="_blank"></a>
+    <button onclick="cambiarTamaño()">a</button>
+    <p id="mielemento"></p>
+</body>
+
+<script>
+
+    const parrafos = document.getElementsByTagName("p")
+   
+    const parrafoResaltado = document.querySelector(".resaltado")
+   // parrafoResaltado.style.fontsize = "18px"
+
+    for (let index = 0; index < parrafos.length; index++) {
+            parrafos[index].innerHTML = "nuevo contenido para:" + "HOla"   
+    }
+
+    clas = document.getElementsByClassName("micl")
+    for (let index = 0; index < clas.length; index++) {
+            clas[index].innerHTML = "nuevo contenido para:" + index    
+    }
+
+
+   
+     function cambiarTamaño(){
+        a= document.querySelectorAll("button")
+        a.forEach(element => {
+            element.style.fontSize = "20px"
+        });
+     }
+
+
+
+     //setAtribute
+     const enlace = document.getElementById("mienlace")
+     enlace.setAttribute("href","https://www.google.com.co")
+
+
+     const url = enlace.getAttribute("href")
+     console.log("URL:" + url )
+
+    const e = enlace.getAttributeNames()
+    console.table(e)
+
+     //getAtributeNames obtiene una lista con todos los atributos de un elemento
+
+     //toggleAtribute: Agregar o eliminar un atributo (true agregar) (false eliminar)
+     //hasAtribute : si el atributo esta en la etiqueta 
+
+
+
+     const mielemento = document.getElementById("mielemento")
+     mielemento.toggleAttribute("data-info")
+     console.log("data-info presente? "+ mielemento.hasAttribute("data-info"))
+
+
+//remover ATributo
+     mielemento.removeAttribute("data-info")
+     console.log("data-info presente? "+ mielemento.hasAttribute("data-info"))
+
+     
+
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<form action="">
+    <label for="n1">Numero 1: </label>
+    <input id="num1" type="number" name="n1" value="">
+
+    <label for="n2">Numero 2: </label>
+    <input id="num" type="number" name="n2">
+
+</form>
+
+<button onclick="operacion()">
+    +
+</button>
+
+    <hr>
+
+    <label for="res">Resultado</label>
+    <input  id="re" type="number">
+
+    
+<script>
+
+let re = document.querySelector("#re")
+re.readOnly = true
+
+
+
+function operacion(){
+
+    let form = document.querySelector("form")
+    let formd = new FormData(form)
+
+    let li = []
+
+    formd.forEach(e=>{
+        li.push(e)
+    })
+
+    suma = Number(li[0]) + Number(li[1])
+
+    console.log(li)
+
+    let re = document.querySelector("#re")
+    re.value = suma
+
+}
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
