@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="miElemento" class="clase1 clase2">Contenido del Elemento</div>
+
+    <button onclick="contarClases()">Cantidad de clases</button>
+    <button onclick="agregarClase()">Agregar Clase</button>
+    <button onclick="classNPos()">POsicion</button>
+    <button onclick="existeClase()">Valida si una clase existe</button>
+    <button onclick="removerClase()">remover clase</button>
+    <button onclick="alternarClase()">alternar clase</button>
+    <button onclick="replace()">Reemplazar clase</button>
+
+    <script>
+        const agregarClase = ()=>{
+            const elemento = document.getElementById("miElemento");
+            elemento.classList.add("nuevaClase")
+        }
+
+
+        const contarClases = ()=>{
+            const elemento = document.getElementById("miElemento")
+
+            const cant = elemento.classList.length
+            alert(cant.toString())
+
+
+        }
+
+
+        const classNPos = ()=>{
+            const elemento = document.getElementById("miElemento")
+
+            const claspos1 = elemento.classList.item(1)
+            alert("clase en la posicion 1"+ claspos1.toString())
+
+
+        }
+
+
+
+        const existeClase = ()=>{
+            const elemento = document.getElementById("miElemento")
+
+            const clasexist = elemento.classList.contains("nuevaClase")
+            alert("clase Existe?: "+ clasexist
+            )
+        }
+
+
+        const removerClase = ()=>{
+            const elemento = document.getElementById("miElemento")
+
+            const rta = elemento.classList.remove("clase2","nuevaClase")
+            alert("respuesta de eliminar: "+ rta
+            )
+        }
+
+
+        const alternarClase = ()=>{
+            const elemento = document.getElementById("miElemento")
+
+            const alt = elemento.classList.toggle("nuevaClase")
+            alert("nueva Clase alternada: "+ alt
+            )
+        }
+
+
+        const replace = ()=>{
+            const elemento = document.getElementById("miElemento")
+
+            const alt = elemento.classList.replace("nuevaClase","ClaseReemplazo")
+            alert("nueva Clase alternada: "+ alt
+            )
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <main class="content">
+        <section>
+            <label for="euros">Euros: </label>
+            <input id="veuros" type="number" name="euros">
+        </section>
+
+        <section>
+            <label for="dolars">Dolares: </label>
+            <input id="vdolar" type="number" name="dolars">
+        </section>
+        <section>
+            <button id="btc">Calcular</button>
+        </section>
+    </main>
+
+    <script>
+
+       
+
+
+        async function getDivisa(){
+
+            url = "https://cdn.dinero.today/api/ecb.json"
+
+            const respuesta = await fetch(url);
+
+            if(!respuesta.ok){
+           throw new Error("Error, obtener divisa");
+            }
+            const json = await respuesta.json()
+
+            return(json)
+
+        }
+
+
+    let btnc = document.getElementById("btc")
+    btnc.addEventListener("click",(e)=>{
+        e.preventDefault()
+        divisa()
+    })
+
+        async function divisa(){
+            try {
+                const vDivisas = await getDivisa()
+                valorbase = vDivisas.rates.EUR
+                let inputeuros = document.getElementById("veuros")
+                let inputdolar = document.getElementById("vdolar")
+                let euros = inputeuros.value
+
+                let dolares = euros / valorbase
+
+                inputdolar.value = dolares.toFixed(3)
+                
+            } catch (error) {
+                console.log(error.message)
+            }
+          
+
+        }
+
+    </script>
+    
+</body>
+</html>

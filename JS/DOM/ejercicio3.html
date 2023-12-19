@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        form{
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        section{
+            margin: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+
+   
+
+    <form action="">
+
+        <section>
+            <label for="gcent">Grados centigrados</label>
+            <input id="inp1" type="number" name="gcent" >
+        </section>
+
+        <section>
+            <label for="gfh">Grados Farenheit</label>
+            <input id="inp2"  type="number">
+        </section>
+
+        <section>
+            <button id="btcal">a Centigrados</button>
+            <button id="btcal2"> a Farenheit</button>
+        </section>
+    
+    </form>
+
+    <script>
+
+        
+
+        btncal = document.getElementById("btcal")
+        btncal2 = document.getElementById("btcal2")
+
+        btncal.addEventListener("click",(e)=>{
+            e.preventDefault()
+            inp1 = document.getElementById("inp1")
+            inp2 = document.getElementById("inp2")
+            v2 = Number(inp2.value)
+            vcent = Number(inp1.value)
+
+        if(vcent!=""){
+            alert("Error, Campo 1 debe estar vacio")
+        return
+        }
+            vcent = (v2-32)*5/9
+            inp1.value = vcent.toFixed(2)
+        })
+        
+
+        btncal2.addEventListener("click",(e)=>{
+            e.preventDefault()
+            inp1 = document.getElementById("inp1")
+            inp2 = document.getElementById("inp2")
+
+            v2 = inp2.value
+
+            console.log(typeof(v2))
+
+            if(v2!=""){
+                alert("Error, Campo 2 debe estar vacio")
+                return
+            }
+
+            vcent = Number(inp1.value)
+            vfar = vcent*(9/5)+32
+            inp2.value = vfar.toFixed(2)
+        })
+
+
+   
+
+
+
+        
+    </script>
+</body>
+</html>
