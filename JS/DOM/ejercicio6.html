@@ -13,10 +13,7 @@
 
 <body>
 
-    <article id="contentinfo">
-        
-    </article>
-
+  
     <p>Lorem ipsum dolor sit amet, <a href="http://prueba">consectetuer adipiscing elit</a>. Sed mattis enim vitae orci.
         Phasellus libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis. Quisque sapien
         nunc, posuere vitae, rutrum et, luctus at, pede. Pellentesque massa ante, ornare id, aliquam vitae, ultrices
@@ -43,7 +40,8 @@
         tristique, ipsum odio euismod tortor, a vestibulum nisl mi at odio. <a href="http://prueba5">Sed non lectus non
             est pellentesque</a> auctor.</p>
 
-    
+    <article id="contentinfo"></article>
+        
         
     <script>
 
@@ -54,32 +52,69 @@
 	// Numero de enlaces de la pagina
 
 	// Direccion del penultimo enlace
+        crearElemento("Direccion del penultimo enlace",enlaces[enlaces.length-2])
 
 	// Numero de enlaces que apuntan a http://prueba
+        con2 = cEnlacesP()
+        crearElemento("Numero de enlaces que apuntan a http://prueba",con2)
 
 	// Numero de enlaces del tercer p�rrafo
-
+        con3 = nEnlacesP()
+        crearElemento("Numero de enlaces del tercer p�rrafo",con3)
     }
 
     function crearElemento(msg,cont){
         const conten = document.getElementById("contentinfo")
         parrafo = document.createElement("p")
-        parrafo.textContent = msg+ ":" +  cont
+        parrafo.textContent = msg+ ": " +  cont
         conten.appendChild(parrafo)
     }
+
+
+    let enlaces = []
 
     function CalcularEnlace(){
         const ancor = document.querySelectorAll("a");
         cont = 0
 
         for(let e of ancor){
-            console.log(e.getAttribute("href"))
             if(e.getAttribute("href")){
-                cont++
+                enlaces.push(e.getAttribute("href"))
             }
         }
 
+        return enlaces.length
+    }
+
+    function cEnlacesP(){
+        const ancor = document.querySelectorAll("a");
+        cont = 0
+        for(let e of ancor){
+            if(e.getAttribute("href")==="http://prueba"){
+                cont++
+            }
+        }
         return cont
+    }
+
+    function nEnlacesP(){
+        const parr = document.querySelectorAll("p");
+        bandera=1
+       for(let parrafo of parr){
+            if(bandera===3){
+                const ancor = parrafo.children
+                cont = 0
+                for(let e of ancor){ 
+                    console.log(e)
+                    if(e.getAttribute("href")){
+                        cont++
+                    }
+                }
+                console.log(cont)
+                return cont
+            }
+            bandera++
+        }
     }
             
 
