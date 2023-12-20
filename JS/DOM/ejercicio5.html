@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ordenar Arrays de Cadenas</h1>
+    <hr>
+
+    <p>
+      Ingrese nombres en la caja de texto de abajo y ordene este listado el cual apareceran en el area de texto  
+    </p>
+
+    <label for="nom">Nombre:</label>
+    <input id="inp1" type="text" name="nom">
+    <button id="addN">Agregar y ordenar nombre</button>
+
+
+    <h1>Nombres ordenados</h1>
+        <hr>
+    
+    <textarea name="texta" id="texta" cols="30" rows="10" placeholder="Aqui apareceran los nombres ordenados"></textarea>
+    <button id="limp">Limpiar</button>
+
+    <script>
+
+    const addNombres = document.getElementById("addN")
+    let names = []
+    addNombres.addEventListener("click",()=>{
+
+        const valn = document.getElementById("inp1").value
+        if((valn) === Number){
+            return("Debe ser un texto")
+        }
+
+        addName(valn,names)
+        pintar(names)
+        inp1.value = ""
+    })
+    
+    
+    function addName(valor,list){
+        list.push(valor)
+        list.sort()
+        console.log(list)
+    }
+
+
+    function pintar(list){
+        const textarea = document.getElementById("texta")
+        str = ""
+        textarea.readOnly = true
+
+        for(let e of names){
+            str+= e + "\n"
+        }
+        texta.value = str
+    }
+
+    const btnlimp = document.getElementById("limp")
+    btnlimp.addEventListener("click",()=>{
+        const textarea = document.getElementById("texta")
+        str = ""
+        textarea.value = str
+        names = []
+        console.log(names)
+    })
+
+    </script>
+
+
+</body>
+</html>
