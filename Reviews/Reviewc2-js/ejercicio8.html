@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        form{
+            width: fit-content;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: justify;
+            padding: 20px;
+        }
+
+        #mostrarinfo{
+            width: fit-content;
+            margin: 20px 0 ;
+            border: 2px solid black;
+            padding: 20px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <form action="">
+
+        <div>
+            <label for="nCliente">Nombre del cliente: </label>
+            <input id="txtcli" type="text">
+        </div>
+
+        <div>
+            <h2>Material de la caja</h2>
+            <select name="slc" id="slc">
+                <option value="plastico">Plastico</option>
+                <option value="madera">Madera</option>
+                <option value="carton">Carton</option>
+            </select>
+        </div>
+
+        <div>
+            <h2>seleccione unas dimensiones para la caja</h2>
+           
+            <input type="radio" name="rBtn" class="radiusBtn" value="diminutas">
+            <label for="rBtn">Diminutas</label> <br>
+            <input type="radio" name="rBtn" class="radiusBtn" value="medianas">
+            <label for="rBtn">medianas</label> <br>
+            <input type="radio" name="rBtn" class="radiusBtn" value="grandes">
+            <label for="rBtn">Grandes</label> <br>
+    </div>
+
+        <div>
+            <h2>comentarios</h2>
+            <textarea name="txta" id="txta" cols="30" rows="10"></textarea>
+        </div>
+
+        <input type="button" name="btn" id="btn" value="Enviar">
+    </form>
+    
+    
+    <div id="mostrarinfo">
+        <h1>Mensaje</h1>
+
+    </div>
+
+
+    <script>
+
+
+        const btn = document.getElementById("btn")
+        btn.addEventListener("click",(e)=>{
+            e.preventDefault()
+            const continfo = document.getElementById("mostrarinfo")
+            const slc = document.getElementById("slc").value
+            const p = document.createElement("p")
+            const ncliente = document.getElementById("txtcli").value
+            const radiochecked = document.querySelector("[name=rBtn]:checked").value
+            const txta = document.getElementById("txta").value
+
+            if(p ==="" || ncliente==="" || radiochecked==="" || txta===""){
+                alert("Campos faltantes")
+                return  
+            }
+
+            p.textContent = `${ncliente} ha pedido una caja de ${slc}  con unas dimensiones ${radiochecked}.  ${txta}`
+            continfo.appendChild(p)
+        })
+
+
+
+    </script>
+</body>
+</html>
