@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="parent">
+            <p>HOla a todos</p>
+            <p class="message">Hola, soy todo un camper</p>
+        </div>
+    </div>
+
+    <button onclick="nav_children()">CHildren</button>
+
+    <script>
+
+        function nav_children(){
+            const div = document.querySelector(".parent")
+
+            //cantidad de hijos
+            console.log(div.childNodes.length)
+
+             //nodos
+             console.log(div.childNodes)
+
+             //nodo padre
+             console.log(div.parentNode)
+        }
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="parent">
+            <p>HOla a todos</p>
+            <p class="message">Hola, soy todo un camper</p>
+        </div>
+    </div>
+
+   
+
+    <button onclick="insertdaycelemento()">agregar elemento adyacente</button>
+
+    <button onclick="insertdayhtml()">agregar html adyacente</button>
+
+    <button onclick="insertdaytext()">agregar texto adyacente</button>
+
+    <script>
+
+        /*insert api adjacent*/
+
+        function insertdaycelemento(){
+            const div = document.querySelector("div")
+            const p = document.createElement("p")
+            p.innerHTML = "<span style='color:red'>Este es el contenido insertado</span>"
+            div.insertAdjacentElement("beforebegin",p)
+            //afterbegin
+            //beforeend
+            //afterend
+        }
+
+
+
+//con contenido complejo html
+        function insertdayhtml(){
+            const div = document.querySelector("div")
+
+            const p = document.createElement("p")
+            const str = "<span style='color:red'>Este es el contenido insertado</span>"
+            div.insertAdjacentHTML("afterbegin",str)
+            //afterbegin
+            //beforeend
+            //afterend
+        }
+
+        function insertdaytext(){
+            const div = document.querySelector("div")
+
+            const p = document.createElement("p")
+            const str = "<span style='color:red'>Este es el contenido insertado</span>"
+            div.insertAdjacentText("afterbegin",str)
+            //afterbegin
+            //beforeend
+            //afterend
+        }
+
+
+
+
+
+ 
+
+
+
+    </script>
+    
+</body>
+</html>
