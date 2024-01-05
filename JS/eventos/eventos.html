@@ -6,6 +6,28 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
+=======
+
+    <button id="b1">Cambiar color de fondo</button>
+    <input type="text" id="miInput" value="Texto Aqui">
+    <script>
+        let miInput = document.getElementById("miInput")
+        miInput.setAttribute("ondblclick","alert('Doble click en el texto')")
+
+        const letters = "0123456789ABCDEF" 
+
+        const ChangeBackground = ()=>
+            document.body.style.backgroundColor = getRandomColor();
+
+        const getRandomColor = ()=>
+            Array(6).fill(" ").reduce(p=> p += letters[Math.floor(Math.random()*16)],"#");
+
+        btn = document.getElementById("b1")
+        btn.setAttribute("onclick","ChangeBackground()")
+
+    </script>
+>>>>>>> 182d67b (aaaaa)
     
 </body>
 </html>

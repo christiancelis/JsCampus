@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Ejemplo de eventos</h1>
+
+    <p id="parr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut atque neque laborum saepe, cupiditate quae, perferendis magnam architecto dolorum assumenda aliquam reiciendis voluptatum dignissimos, asperiores ut dolor itaque est quis.</p>
+
+    <script>
+        nveces = 0
+
+        parrafo = document.getElementById("parr")
+
+        parrafo.addEventListener("mouseover",()=>{
+            nveces++
+            parrafo.textContent = nveces + " veces pasaste el mouse por aqui"
+            
+        })
+
+        parrafo.addEventListener("mouseout",()=>{
+            parrafo.textContent = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut atque neque laborum saepe, cupiditate quae, perferendis magnam architecto dolorum assumenda aliquam reiciendis voluptatum dignissimos, asperiores ut dolor itaque est quis."
+            
+        })
+
+        
+    </script>
+    
+</body>
+</html>
