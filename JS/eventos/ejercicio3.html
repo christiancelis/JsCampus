@@ -35,17 +35,17 @@
 
         if(e.keyCode===49){
             console.log(e.keyCode)    
-            d1.setAttribute("class","visible")
-            d2.removeAttribute("class","visible")
-            d3.removeAttribute("class","visible")
+            d1.classList.toggle("visible")
+            d2.classList.remove("visible")
+            d3.classList.remove("visible")
         }else if(e.keyCode===50){
-            d2.setAttribute("class","visible")
-            d1.removeAttribute("class","visible")
-            d3.removeAttribute("class","visible")
+            d2.classList.toggle("visible")
+            d1.classList.remove("visible")
+            d3.classList.remove("visible")
         }else if(e.keyCode===51){
-            d3.setAttribute("class","visible")
-            d2.removeAttribute("class","visible")
-            d1.removeAttribute("class","visible")
+            d3.classList.toggle("visible")
+            d2.classList.remove("visible")
+            d1.classList.remove("visible")
 
         }
     })
