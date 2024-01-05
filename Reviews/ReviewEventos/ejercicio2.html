@@ -57,19 +57,27 @@
             i2 = Number(inp2.value)
         
         
-        if(i1==="" && i2===""){
+        if(i1=="" && i2==""){
             alert("Error, los dos campos no pueden estar vacios")
             return
-        }else if(i1!=="" && i2!==""){
+        }
+
+
+        if(i1!="" && i2!=""){
             alert("Error, los dos campos no pueden estar llenos")
             return
-        }else if(i1!="" && i2===""){
+        }
+        
+        if(i2!="" && i1==""){
             bb = (i2-32)*5/9
             inp1.value = bb.toFixed(2)
             return
-        }else{
+        }
+        
+        if(i2=="" && i1!=""){
             vfar = i1*(9/5)+32
             inp2.value = vfar.toFixed(2)
+            return
         }
            
         })
