@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .oculto {
+            display: none
+        }
+
+        .visible {
+            display: block
+        }
+    </style>
+</head>
+<body>
+        <div class="oculto" id="ficha1">
+            Hola, soy el bloque 1</div>
+        <div class="oculto" id="ficha2">
+            Hola, soy el bloque 2</div>
+        <div class="oculto" id="ficha3">
+            Hola, soy el bloque 3</div>
+
+        
+    <script>
+
+    bb = document.querySelector("body")
+
+
+    bb.addEventListener("keypress",(e)=>{
+        d1 = document.getElementById("ficha1")
+        d2 = document.getElementById("ficha2")
+        d3 = document.getElementById("ficha3")
+
+        if(e.keyCode===49){
+            console.log(e.keyCode)    
+            d1.classList.toggle("visible")
+            d2.classList.remove("visible")
+            d3.classList.remove("visible")
+        }else if(e.keyCode===50){
+            d2.classList.toggle("visible")
+            d1.classList.remove("visible")
+            d3.classList.remove("visible")
+        }else if(e.keyCode===51){
+            d3.classList.toggle("visible")
+            d2.classList.remove("visible")
+            d1.classList.remove("visible")
+
+        }
+    })
+
+    </script>
+</body>
+</html>
