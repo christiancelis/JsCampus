@@ -26,7 +26,6 @@
    
 
     <form action="">
-
         <section>
             <label for="gcent">Grados centigrados</label>
             <input id="inp1" type="number" name="gcent" >
@@ -46,13 +45,12 @@
     <script>
 
         btncal = document.getElementById("btcal")
+        inp1 = document.getElementById("inp1")
+        inp2 = document.getElementById("inp2")
 
         btncal.addEventListener("click",(e)=>{
             e.preventDefault()
-            inp1 = document.getElementById("inp1")
-            inp2 = document.getElementById("inp2")
-
-
+            
             i1 = Number(inp1.value)
             i2 = Number(inp2.value)
         
@@ -71,16 +69,41 @@
         if(i2!="" && i1==""){
             bb = (i2-32)*5/9
             inp1.value = bb.toFixed(2)
+            inp1.style.backgroundColor = "#71ff74"  
             return
         }
         
         if(i2=="" && i1!=""){
             vfar = i1*(9/5)+32
             inp2.value = vfar.toFixed(2)
+            inp2.style.backgroundColor = "#71ff74"  
             return
         }
            
         })
+
+    inp1.addEventListener("mouseover",()=>{
+            inp1.style.backgroundColor =  "#feff64"
+            inp2.style.backgroundColor =  "#9dd2fd"
+
+        })
+
+    inp1.addEventListener("mouseout",()=>{
+            inp1.style.backgroundColor =  "#ffffff"
+            inp2.style.backgroundColor =  "#ffffff"
+
+    })
+
+    inp2.addEventListener("mouseover",()=>{
+            inp2.style.backgroundColor =  "#feff64"
+            inp1.style.backgroundColor =  "#9dd2fd"
+
+    })
+
+    inp2.addEventListener("mouseout",()=>{
+            inp1.style.backgroundColor =  "#ffffff"
+            inp2.style.backgroundColor =  "#ffffff"
+    })
     </script>
 </body>
 </html>
