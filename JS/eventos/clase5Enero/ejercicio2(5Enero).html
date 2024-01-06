@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Coordenada X</label>
+        <input id="cX">
+        </div>
+        <div>
+        <label>Coordenada Y</label>
+        <input id="cY">
+        </div>
+
+    <script>
+    cx = document.getElementById("cX")
+    cy = document.getElementById("cY")
+
+    document.addEventListener("mousemove",(e)=>{
+        cx.value = e.clientX
+        cy.value = e.clientY
+    })
+
+    on
+    </script>
+</body>
+</html>
