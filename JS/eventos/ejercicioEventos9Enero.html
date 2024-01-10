@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(115, 191, 221);
+        }
+
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(6,1fr);
+            width: 500px;
+            height: 500px;
+            background-color: antiquewhite;
+        }
+
+        section{
+            grid-column: 1/-1;
+            grid-row: 1/2;
+            background-color: black;
+        }
+
+        input{
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: white;
+            font-size: 30px;
+            padding: 10px;
+        }
+
+        button{
+            border: 1px solid rgb(190, 186, 186);
+            font-size: 30px;
+        }
+
+        .DIECISIETE{
+            grid-column: 4/5;
+            grid-row: 3/7;
+            background-color: rgba(247, 107, 42, 0.747);
+            
+        }
+
+        .UNO, .DOS, .TRES,.CUATRO{
+            background-color: rgb(206, 201, 201);
+        }
+    
+    
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <section>
+            <input type="number">
+        </section>
+        <button class="UNO">+</button>
+        <button class="DOS">-</button>
+        <button class="TRES">x</button>
+        <button class="CUATRO">/</button>
+        <button class="CINCO">7</button>
+        <button class="SEIS">8</button>
+        <button class="SIETE">9</button>
+        <button class="OCHO">4</button>
+        <button class="NUEVE">5</button>
+        <button class="DIEZ">6</button>
+        <button class="ONCE">1</button>
+        <button class="DOCE">2</button>
+        <button class="TRECE">3</button>
+        <button class="CATORCE">0</button>
+        <button class="QUINCE">.</button>
+        <button class="DIECISEIS">C</button>
+        <button class="DIECISIETE">=</button>
+
+    </div>
+
+    <script>
+        ValorActual = ""
+        valorSiguiente = ""
+        valorTotal = ""
+        caracter = ""
+        bandera = false
+
+
+        Almacenar = document.querySelector(".container")
+
+        Almacenar.addEventListener("click",(e)=>{
+
+                input = document.querySelector("input")
+                ValorE = e.target.textContent
+
+                console.log(e.target.textContent)
+
+                if(ValorE=="="){
+
+                    switch(caracter){
+                        case "+": console.log(Number(ValorActual) + Number(valorSiguiente))
+                    }
+
+                   
+                }
+                
+                if(bandera==true && ValorE>=0 && ValorE<=9){
+                    valorSiguiente += ValorE
+                    console.log(valorSiguiente)
+                }
+                
+                if(bandera==false && ValorE>=0 && ValorE<=9){
+                    ValorActual += ValorE
+                    console.log(ValorActual)
+                }
+
+                if(ValorE=="+" || ValorE=="-" || ValorE=="x"){
+                    bandera=true;
+                    caracter = ValorE
+                    console.log(caracter)
+                }
+
+        })
+
+
+        
+
+    
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
