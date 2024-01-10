@@ -131,8 +131,9 @@
                 if(ValorE=="C"){
                     console.log(lista)
                     lista.pop()
-                    input.textContent = lista[-1]
-                    document.getElementsByClassName("DIECISEIS").textContent = "AC"
+                    input.textContent = lista.slice(-1)
+                    c =document.querySelector(".DIECISEIS")
+                    c.textContent =  "AC"
                 }
 
                 if(ValorE=="AC"){
