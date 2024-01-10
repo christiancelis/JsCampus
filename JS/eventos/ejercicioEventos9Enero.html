@@ -131,8 +131,12 @@
                 if(ValorE=="C"){
                     console.log(lista)
                     lista.pop()
+                    
                     input.textContent = lista.slice(-1)
+                    res = lista.slice(-1)
+                    reestablecer(res)
                     c =document.querySelector(".DIECISEIS")
+
                     c.textContent =  "AC"
                 }
 
@@ -216,18 +220,8 @@ function reestablecer(res){
     valorSiguiente= ""
     caracter = ""
 }
-    
 
-
-
-
-
-
-
-
-
-
-    </script>
+</script>
 
 
 
