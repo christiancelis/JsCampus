@@ -141,9 +141,13 @@
                 }
 
                 if(ValorE=="AC"){
-                    lista = {}
-                    res = 0
-                    reestablecer(res)
+                    ValorActual = ""
+                    valorSiguiente = ""
+                    valorTotal = ""
+                    caracter = ""
+                    bandera = false
+                    lista = []
+                    input.textContent = 0
                 }
 
                 if(ValorE=="="){
@@ -215,12 +219,9 @@ function Operacion(caracter){
 function reestablecer(res){
     input = document.querySelector(".info")
     input.textContent = res
-        ValorActual = ""
-        valorSiguiente = ""
-        valorTotal = ""
-        caracter = ""
-        bandera = false
-        lista = []
+    ValorActual = res
+    valorSiguiente= ""
+    caracter = ""
 }
 
 </script>
