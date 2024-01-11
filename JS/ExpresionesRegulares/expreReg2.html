@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const names = ["Pedro","Sara","Miriam","Nestor","Adrian","Sandro"]
+         
+        names.forEach(function(name){
+            const firstletter = name.at(0).toLowerCase();
+            const Lastletter = name.at(-1).toLowerCase();
+            
+            if(firstletter==="p" || firstletter==="s"   || firstletter==="o"  || Lastletter==="a"){
+                console.log(`El nombre ${name} cumple las condiciones`)
+            }
+        })
+        
+        
+        names.forEach(function(name){
+        const regex = /^(p|s).+(o|a)$/;
+        if(regex.test(name)){
+            console.log(`El nombre ${name} cumple las condiciones`)
+        }
+        })
+
+    </script>
+    
+</body>
+</html>
