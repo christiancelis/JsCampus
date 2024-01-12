@@ -2,8 +2,7 @@ function getInfo(){
     const url = "https://rickandmortyapi.com/api/character"
     fetch(url)
     .then(respuesta => respuesta.json())
-    .then(json =>{
-       
+    .then(json =>{ 
         for(let i=0;i<=json.results.length;i++){ 
             pintarHtml(json,i)
         }
@@ -12,12 +11,10 @@ function getInfo(){
         console.log(err.message)
         return
     })
-
     return
 }
 
 function pintarHtml(data,i){
-    console.log(data.results)
     main = document.querySelector("main")
     container = document.createElement("div")
     imagen = document.createElement("img")

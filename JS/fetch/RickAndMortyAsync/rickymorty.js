@@ -8,10 +8,8 @@ async function getinfo(){
             pintarHtml(json,i)
         } catch (error) {
             console.log(error.message)
-        }
-        
+        }   
     }
-    
 }
 
 function pintarHtml(data,i){
