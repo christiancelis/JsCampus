@@ -149,7 +149,7 @@ body{
             font-size: var( --size-p-desktop);
         }
 
-        .Planes-servicios li{
+        .Planes-servicios  li{
             font-size: var(--size-p-);
             margin-left: 30%;
         }
