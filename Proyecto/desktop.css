@@ -1,0 +1,97 @@
+.ContainerHero{
+    padding: 20px 30px;
+}
+
+/*HeaderDesktop----------------------*/
+
+nav .logo img{
+    width: 180px;
+}
+
+.nav-elements .listaNav{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+    z-index: 0;
+}
+.nav-elements .listaNav li a{
+    color: rgb(255, 255, 255)  ;
+    font-size: 1.6rem;
+}
+
+.menu-hamburguesa{
+    display: none;
+}
+
+/*HeroDesktop----------------------*/
+
+.Hero{
+    margin: 40px 10px;
+    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,auto);
+    flex-direction: row;
+}
+
+.Imagen3dHero{
+    display: none;
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+.ImagenesHero img{
+    height: 100px;
+}
+
+.Hero .ImagenesHero{
+    margin: 0;
+    display: flex; 
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    grid-row: 1/3;
+    grid-column: 1/2;
+    background-color: rgb(44, 50, 50);
+
+}
+
+
+/*ResponsivoDesktop----------------------*/
+
+.DiseñoResponsivo{
+    gap: 20px;
+    padding: 0 90px;
+    margin: 0;
+    background-color: rgb(72, 88, 88);
+
+}
+
+.DiseñoResponsivo img{
+    width: 200px;
+
+}
+
+.Amedida{
+    margin-bottom: 0px;
+    background-color: rgb(41, 37, 37);
+}
+
+.Amedida img{
+    width: 200px;
+}
+
+
+/*BentoDesktop----------------------*/
+
+.ContenidoBento{
+    background-color: black;
+    grid-template-columns: repeat(3,1fr);
+}
+.Bento{
+    height: 100%;
+}
+
+.Bento1{
+    grid-column: 1/2;
+}

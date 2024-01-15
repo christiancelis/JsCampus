@@ -1,0 +1,353 @@
+
+body{
+   color: white;
+
+ }
+
+  
+
+ .box-mision img,.box-mision-dos img,.box-mision-tres img{
+   width: 150px;
+ }
+
+ .box-mision,.box-mision-dos,.box-mision-tres{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+ }
+
+ .acerca-de-arriba{
+   background-color: aliceblue;
+   border-radius: 50%;
+ }
+ .acerca-de-abajo{
+   background-color: aliceblue;
+   border-radius: 50%;
+ }
+
+ .quienes-sms{
+   margin: 60px 0;
+   display: grid;
+   grid-template-columns: 5% repeat(12,1fr) 5%;
+ }
+ .quienes-sms article{
+   grid-column: 2/14;
+ }
+
+ .quienes-sms p{
+   font-size: 2em;
+ }
+
+ .quienes-sms img{
+   width: 100%;
+   margin: 30px 0;
+ }
+
+
+
+
+ .acerca-de{
+    display: grid;
+    grid-template-columns: 5% repeat(12, 1fr)  5%;
+    grid-template-rows: auto;
+ }
+
+ .acerca-de article{
+    grid-column: 2/14;
+ }
+
+ .title-acerca-de{
+   text-align: center;
+    font-size: 4rem;
+    margin: 20px 0;
+    
+ }
+
+ .servicio{
+   margin: 40px 0;
+      grid-template-columns: 5%, repeat(12,1fr),5%;
+   }
+
+   .themes-servicios{
+      grid-column: 2/14;
+   }
+
+   .themes-servicios ul{
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      margin: 0 80px;
+      gap: 5px;
+   }
+
+   .themes-servicios li{
+      height: auto;
+      padding: 20px;
+      border-radius: 30px;
+      border: 1px solid rgb(36, 196, 8);
+      font-size: 1.6rem;
+   }
+
+ @media (width<=768px){
+
+ .input-check,.input-check-dos,.input-check-tres{
+   width: 30px;
+   height: 30px;
+   opacity: 0;
+   cursor: pointer;
+ }
+
+.input-check:checked  ~ .box-mision,
+.input-check-dos:checked  ~ .box-mision-dos,
+.input-check-tres:checked  ~ .box-mision-tres{
+   display: flex;
+   justify-content: space-around;
+   flex-direction: row;
+   position:absolute;
+   top: 70px;
+   left: 0;
+   border: 1px solid rgb(255, 255, 255);
+   background-color: rgb(255, 255, 255);
+   padding: 20px;
+   border-radius: 30px;
+   opacity: 100;
+   font-weight: 200px;
+   z-index: 3;
+   width: 100%;
+   color: rgb(0, 0, 0);
+   font-size: 1.8rem;
+   gap: 20px;
+   animation-name: ocultar;
+   animation: ocultar 0.2s ease-in-out ;
+   animation-fill-mode: both;
+}
+
+
+@keyframes ocultar{
+   from{
+      transform: translateY(-100px);
+   }
+   to{
+      transform: translateY(0);
+   }
+}
+
+
+
+.input-check:checked  ~ .box-mision img,
+.input-check-dos:checked  ~ .box-mision-dos img,
+.input-check-tres:checked  ~ .box-mision-tres img{
+   width: 50%;
+   object-fit: contain;
+   background-size: cover;
+
+}
+
+.acerca-de-box{
+   border: 1px solid rgb(255, 255, 255);
+}
+
+.input-check:checked ~ .acerca-de-abajo,
+.input-check-dos:checked ~ .acerca-de-abajo
+.input-check-tres:checked ~ .acerca-de-abajo{
+   display: none;
+}
+.input-check ~ .acerca-de-abajo,
+.input-check-dos ~ .acerca-de-abajo,
+.input-check-tres ~ .acerca-de-abajo{
+   display: block;
+}
+
+.input-check ~ .acerca-de-arriba,
+.input-check-dos ~ .acerca-de-arriba,
+.input-check-tres ~ .acerca-de-arriba{
+   opacity: 0;;
+}
+
+.input-check:checked ~ .acerca-de-arriba,
+.input-check-dos:checked ~ .acerca-de-arriba,
+.input-check-tres:checked ~ .acerca-de-arriba{
+   opacity: 100;
+}
+
+.acerca-de-arriba, .acerca-de-abajo{
+   position: absolute;
+   right: 20px;
+   pointer-events: none;
+}
+ 
+ .acerca-de article img{
+   width: 30px;
+ }
+
+ .acerca-de section{
+   position: relative;
+   display: flex;
+   justify-content:space-between;
+    font-size: 1.7rem;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 30px;
+ }
+
+
+ .acerca-de article section div{
+      display: none;
+ }
+
+ .acerca-de section div{
+    display: flex;
+    flex-direction: column;
+ }
+
+ section img{
+    width:200px;
+    margin: 0 auto;
+ }
+
+ .acerca-de section h1{
+    font-size: 2rem;
+ }
+ .acerca-de section p{
+    margin: 10px 0 ;
+ }
+
+ .themes-servicios{
+   grid-column: 2/14;
+   margin-bottom: 20px;
+}
+
+.themes-servicios ul{
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.themes-servicios li{
+   border: 1px solid rgb(255, 255, 255);
+   border-radius: 30px;
+   padding: 10px;
+}
+
+ .box-mision img,.box-mision-dos img, .box-mision-tres img{
+   display: none;
+ }
+
+}
+
+
+@media (width>=768px){
+   .themes-servicios{
+      gap: 30px;
+   }
+
+
+   .title-acerca-de div{
+      display: flex;
+
+   }
+
+   .title-acerca-de div  img{
+      width: 50px;
+   }
+
+   
+   
+
+   .input-check, .input-check-dos, .input-check-tres,
+   .acerca-de-arriba, .acerca-de-abajo{
+      display: none;
+   }
+
+   .acerca-de-box{
+      display: flex;
+      flex-direction: column;
+   }
+
+   .acerca-de-box h1{
+      border: 1px solid rgb(255, 255, 255);
+      border-radius: 30px;
+      text-align: center;
+      font-size: 3rem;
+      color: var(--blue-minimalist--);
+   }
+
+   .acerca-de-box p{
+      font-size: 2rem;
+      margin-bottom:20px;
+   }
+
+   .box-mision,.box-mision-dos, .box-mision-tres{
+      margin-top: 0;
+      padding: 30px;
+      border: 1px solid var(--blue-minimalist--);
+      border-radius: 30px;
+      margin-bottom: 30px;
+   }
+
+   .acerca-de-box img{
+      margin: 0 auto;
+      align-items: center;
+   } 
+
+}
+
+@media (width>=1280px){
+
+   .quienes-sms div{
+      display: flex;
+      align-items: center;
+      gap: 30px;
+   }
+   .quienes-sms img{
+         width: 50%;
+         margin: 30px 0;
+   }
+
+   .themes-servicios ul{
+      justify-content: center;
+   }
+   .themes-servicios ul li:hover{
+      background-color: var(--yellow-minimalist--);
+      color: white;
+   }
+   
+
+   .title-acerca-de{
+      font-size: 5rem;
+   }
+   .acerca-de{
+      margin: 40px 0;
+   }
+
+   .ac-arti{
+      display: flex;
+   }
+
+   .acerca-de-box{
+      margin: 0 30px;
+      width: 50%;
+   }
+   .acerca-de-box h1{
+      text-align: center;
+      padding-top: 5px;
+      font-size: 3rem;
+      width: auto;
+      height: 50px;
+      background-color: #1A3284;
+      color: white;
+   }
+   .acerca-de-box p{
+      font-size: 2rem;
+   }
+
+   .box-mision,.box-mision-dos, .box-mision-tres{
+      margin-top: 40px;
+
+   }
+
+}

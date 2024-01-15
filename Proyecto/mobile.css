@@ -1,0 +1,426 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: "Mada", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body{
+    background-color: black;
+    width: 100%;
+    height: auto;
+}
+
+.ContainerHero{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 10%;
+    background-color: black;
+    color: white;
+    border: 2px solid  #FAFF00;
+    
+
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+/*HeaderMobile----------------------*/
+
+header{
+    width: auto;
+    height: 50px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo img{
+    width: 130px;
+}
+
+.nav-elements ul{
+    display: none;
+}
+
+.nav-elements .visible{
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    top:100px;
+    background-color: #000000;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    border-radius: 10%;
+    border: #ffffff 2px solid;
+}
+
+.nav-elements .visible li{
+    width: 100%;
+    padding: 5%;
+    font-size: 2rem;
+    background-color: #000000;
+}
+
+.nav-elements .visible a{
+    color: white;
+}
+
+.nav-elements .menu-hamburguesa img{
+    background-color: white;
+    width: 35px;
+    border-radius: 20%;
+    padding: 7px;
+}
+
+/*HeroMobile----------------------*/
+
+.Hero{
+    height: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Hero .ImagenesHero{
+    display: none;
+}
+
+.Imagen3dHero img{
+    width: 100%;
+    order: 1;
+}
+
+.Hero .ContenidoHero{
+    order: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.ContenidoHero h1{
+    /* background: linear-gradient(0deg, rgba(0,255,166,1) 0%, rgba(0,255,209,1) 10%, rgba(237,255,0,1) 100%);
+    -webkit-background-clip: text;
+    color: transparent;  */
+    font-size: 6.5rem;
+    text-align: center;
+}
+
+.ContenidoHero h2{
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.ContenidoHero p{
+    margin-top: 20px;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 200;
+}
+
+.ContenidoHero button{
+    font-size: 1.5rem;
+    margin-top: 30px;
+    height: 60px;
+    border-radius: 13px;
+    background-color: #ED3E3E;
+    color: white;
+}
+
+/*Contenido1----------------------*/
+
+.Transicion{
+    border: 0 0 2px 0;
+    border-radius: 0 0 30px 30px;
+    width: 100%;
+    height: 40px;
+    background: linear-gradient(0deg, rgba(0,255,166,1) 0%, rgba(0,255,209,1) 10%, rgba(237,255,0,1) 100%)
+}
+
+.DiseñoResponsivo{
+    margin: 60px 0 0 0;
+    color: white;
+    padding: 10%;
+    color: white;
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.DiseñoResponsivo section{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.DiseñoResponsivo h1{
+    font-size: 5rem;
+}
+
+.DiseñoResponsivo p{
+    margin-top: 30px ;
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.lineaR{
+    margin-top: 20px;
+    width: 80%;
+    height: 10px;
+    background-color: #FAFF00;
+
+}
+
+.DiseñoResponsivo img{
+    width: 100%;
+}
+
+/*Contenido2----------------------*/
+
+.Amedida{
+    color: white;
+    margin: 0 0 80px 0;
+    padding: 10%;
+    color: white;
+    width: 100%;
+    height: auto;
+}
+
+.Amedida h1{
+    font-size: 5rem;
+}
+.Amedida p{
+    font-size: 2rem;
+    font-weight: 200;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.Amedida img{
+    margin-top: 30px;
+    width:100%;
+}
+
+.programmingImg{
+    padding: 10%;
+    width: 100%;
+}
+
+/*ContenidoBento----------------------*/
+
+.ContenidoBento{
+    background-color: #CCFF02;
+    padding: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Bento2, .Bento3{
+    width: 100%;
+    height: auto;
+}
+
+.Bento1{
+    order: 2;
+    width: 100%;
+    height: 400px;
+    background: url("https://images.pexels.com/photos/7105461/pexels-photo-7105461.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load") rgb(0,0,0,0.2);
+    background-size: cover;
+}
+
+.Bento2{
+    order: 1;
+   background-color: #000000;
+    background-size: cover;
+}
+.Bento3{
+    order: 3;
+   background-color: #000000;
+}
+
+
+.Bento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 5px 0 black;
+    border: 10px solid rgb(255, 255, 255);
+   
+}
+
+
+.Bento h1{
+    font-size: 3.5rem;
+    color: #CCFF02;
+    text-align: start;
+}
+
+.Bento p{
+    margin-top: 10px;
+    color: white;
+    font-size: 2.3rem;
+    font-weight: 300;
+}
+
+
+.lineaR2{
+    width: 100%;
+    height: 30px;
+    background-color: #eaff00;
+}
+
+
+
+/*slide Partners----------------------*/
+
+.tres{
+    display: grid;
+    grid-template-columns: 5% repeat(12,1fr) 5%;
+    grid-template-rows: auto
+}
+
+.partners{
+    background-color: #ffffff;
+    grid-column: 1/15;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.slide{
+margin-top: 20px;
+animation: 1s ease-out;
+overflow-x: hidden;
+width: auto;
+height: 100px;
+padding: 30px 0;
+margin-bottom: 3rem;
+display: flex;
+justify-content: flex-start;
+}
+
+.slide ul{
+display: flex;
+justify-content: space-between;
+align-items:center;
+padding-left: 40px;
+animation: 6s slide infinite linear ;
+}
+.slide ul li{
+width: 25vh;
+}
+
+.slide img{
+width: 80px;
+margin: 0 9px;
+}
+
+.slide:hover >ul{
+animation-play-state: paused;
+}
+
+@keyframes slide {
+from{
+ transform:translateX(0)
+}
+to{
+    transform:translateX(-100%)
+}
+}
+
+
+
+/*Footer----------------------*/
+
+.cuatro{
+    padding: 20px 0 0 0;
+    background-color: #ffffff;
+    color: #000000;  
+    display: grid;
+    grid-template-columns: 5% repeat(12,1fr) 5%;
+    grid-template-rows: auto
+  }
+
+  .cont-cuatro{
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/14;
+    gap: 20px;
+  }
+
+  .cont-cuatro h1{
+    font-size: 2rem;
+  }
+
+  .footer-center div{
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+  .footer-center div li{
+    margin: 10px;
+    font-size: 1.4rem;
+  }
+
+  .redes-sociales ul{
+    display: flex;
+  }
+  .redes-sociales ul li{
+    margin-top: 20px;
+    width: 100%;
+  }
+  .logo-footer img{
+    width: 13rem;
+  }
+  .redes-sociales img{
+    width: 30px;
+  }
+
+  .derechos{
+   text-align: center;
+   padding: 6px;
+    height: 30px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .derechos span{
+    color: var(--blue-minimalist--);
+    font-weight: 700;
+    }
+
+

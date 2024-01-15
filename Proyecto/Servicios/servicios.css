@@ -1,0 +1,146 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: "Mada", sans-serif;
+    font-optical-sizing: auto;
+}
+
+
+
+body{
+    color: white;
+    width: 100%;
+
+}
+
+
+.info-servicios{
+    width: 100%;
+        padding: 30px;
+}
+
+
+.title-servicios{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.title-servicios h1, .Planes-servicios h1{
+    font-size: 4rem;
+}
+
+.title-servicios p{
+    font-size: 1.5rem;
+}
+
+.Planes-servicios{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 200px;
+    height: auto;
+    border: 2px solid greenyellow;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card h1{
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+}
+
+.card li{
+    list-style:circle;
+}
+
+.card button{
+    border-radius: 10px;
+    padding: 10px;
+    background-color: tomato;
+
+}
+
+.card span{
+    color: blueviolet;
+    font-size: 2rem;
+}
+
+.Planes-servicios{
+    margin: 50px 0 50px 0 ;
+}
+
+.PlanEmpresarial{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.PlanEmpresarial button{
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: tomato;
+}
+
+.PlanEmpresarial p{
+    font-size:3rem;
+}
+
+.ContenidoProyectos{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.ContenidoProyectos h1{
+    font-size: 3rem;
+    margin: 20px;
+    text-align: start;
+}
+
+.cardproyectos{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 50px 0 50px 0;
+}
+
+.cardproyectos img{
+    width: 100%;
+}
+.cardproyectos h2{
+    font-size: 1.9rem;
+}
+
+@media screen and (min-width:750px) {
+
+    .flex-cards{
+        display: flex;
+        gap: 30px;
+    }
+
+}

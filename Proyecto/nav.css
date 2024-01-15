@@ -1,0 +1,203 @@
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: "Mada", sans-serif;
+    font-optical-sizing: auto;
+}
+
+body{
+    background-color: black;
+    width: 100%;
+    height: auto;
+}
+
+
+.reveal{
+    position: relative;
+    transform: translateY(80px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+
+
+.ContainerHero{
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 30px;
+    background-color: black;
+    color: white;
+
+}
+
+
+
+header{
+    width: auto;
+    height: 50px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo img{
+    width: 130px;
+}
+
+.nav-elements ul{
+    display: none;
+}
+
+.nav-elements .visible{
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    top:100px;
+    background-color: #000000;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    border-radius: 10%;
+    border: #ffffff 2px solid;
+}
+
+.nav-elements .visible li{
+    width: 100%;
+    padding: 5%;
+    font-size: 2rem;
+    background-color: #000000;
+}
+
+.nav-elements .visible a{
+    color: white;
+}
+
+.nav-elements .menu-hamburguesa img{
+    background-color: white;
+    width: 35px;
+    border-radius: 20%;
+    padding: 7px;
+}
+
+
+
+/*Footer----------------------*/
+
+.cuatro{
+    padding: 20px 0 0 0;
+    background-color: #ffffff;
+    color: #000000;  
+    display: grid;
+    grid-template-columns: 5% repeat(12,1fr) 5%;
+    grid-template-rows: auto
+  }
+
+  .cont-cuatro{
+    display: flex;
+    flex-direction: column;
+    grid-column: 2/14;
+    gap: 20px;
+  }
+
+  .cont-cuatro h1{
+    font-size: 2rem;
+  }
+
+  .footer-center div{
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+
+  .footer-center div li{
+    margin: 10px;
+    font-size: 1.4rem;
+  }
+
+  .redes-sociales ul{
+    display: flex;
+  }
+  .redes-sociales ul li{
+    margin-top: 20px;
+    width: 100%;
+  }
+  .logo-footer img{
+    width: 13rem;
+  }
+  .redes-sociales img{
+    width: 30px;
+  }
+
+  .derechos{
+   text-align: center;
+   padding: 6px;
+    height: 30px;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  .derechos span{
+    color: var(--blue-minimalist--);
+    font-weight: 700;
+    }
+
+
+@media screen and (min-width:750px) {
+    .cuatro{
+        padding: 10px;
+    }
+    .footer-center{
+        display: flex;
+        gap: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: start;
+        flex-wrap: wrap;
+    }
+
+    .footer-center div{
+        padding: 10px;
+    }
+
+
+    nav .logo img{
+        width: 180px;
+    }
+    
+    .nav-elements .listaNav{
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        position: relative;
+        z-index: 0;
+    }
+    .nav-elements .listaNav li a{
+        color: rgb(255, 255, 255)  ;
+        font-size: 1.6rem;
+    }
+    
+    .menu-hamburguesa{
+        display: none;
+    }
+}

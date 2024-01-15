@@ -1,0 +1,36 @@
+
+{
+	"user":{
+		"IdUser":"1",
+		"NombreUser":"Christian",
+		"ApellidoUser":"Celis",
+		"Correo":"correodeprueba@gmail.com",
+		"Contraseña":"123",
+		"Status":"Activo",
+		"Rol":"Admin"
+	},
+	"Comentario":{
+		"IdComentario":"1",
+		"Comentario":"Aqui Pueden Comentar",
+		"Reaccion":"2",
+		"UserId":"1"	
+	},
+	"Compra":{
+		"idCompra":"1",
+		"UserId":"1",
+		"TotalCompra": 2000000
+	},
+	"servicio":{
+		"IdServicio":"001",
+		"NombreServicio":"Landing-Page",
+		"PrecioServicio": 2000000,
+		"UserId":"1"
+	},
+	"AgregarServicio":{
+		"idAgregarServicio":"1",
+		"CompraId":"1",
+		"ServicioId":"001"
+	}
+
+
+}
