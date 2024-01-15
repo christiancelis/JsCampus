@@ -6,6 +6,11 @@
     text-decoration: none;
 }
 
+:root{
+    --size-p-: 1.9rem; 
+    --size-p-desktop: 5rem 
+}
+
 html{
     font-size: 62.5%;
     font-family: "Mada", sans-serif;
@@ -41,7 +46,7 @@ body{
 }
 
 .title-servicios p{
-    font-size: 1.5rem;
+    font-size: var(--size-p-);
 }
 
 .Planes-servicios{
@@ -50,6 +55,7 @@ body{
     gap: 20px;
     justify-content: center;
     align-items: center;
+    margin: 50px 0 50px 0 ;
 }
 
 
@@ -86,9 +92,6 @@ body{
     font-size: 2rem;
 }
 
-.Planes-servicios{
-    margin: 50px 0 50px 0 ;
-}
 
 .PlanEmpresarial{
     width: 100%;
@@ -107,7 +110,7 @@ body{
 }
 
 .PlanEmpresarial p{
-    font-size:3rem;
+    font-size: var(--size-p-);
 }
 
 .ContenidoProyectos{
@@ -133,14 +136,90 @@ body{
     width: 100%;
 }
 .cardproyectos h2{
-    font-size: 1.9rem;
+    font-size: var(--size-p-);
 }
 
 @media screen and (min-width:750px) {
+    body{
+        p{
+            font-size: var( --size-p-desktop);
+
+        }
+        h2{
+            font-size: var( --size-p-desktop);
+        }
+
+        .Planes-servicios li{
+            font-size: var(--size-p-);
+            margin-left: 30%;
+        }
+
+        .info-servicios h1,.info-servicios p{
+            text-align: center;
+            max-width: 60%;
+            margin: 0 auto;
+        }
+    }
 
     .flex-cards{
+        width: 100%;
         display: flex;
         gap: 30px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Planes-servicios{
+        width: 100%;
+    }
+
+    .PlanEmpresarial{
+        margin-top: 30px;
+    }
+    .card{
+        max-width: 500px;
+        width: 50%;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: space-around;
+        justify-content: space-around;
+    }
+
+    .card span{
+        text-align: center;
+    }
+
+    .LineaR{
+        background-color: yellow;
+        width: 30%;
+        height: 10px;
+    }
+
+    .proyectos{
+        gap: 20px;
+        width: auto;
+        display: flex;
+        flex-wrap: wrap;
+        height: auto;
+        flex-direction: row ;
+        justify-content: space-around;
+    }
+
+    .cardproyectos{
+        width: 300px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .proyectos img{
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .proyectos h2{
+        margin: 10px;
+        text-align: center;
     }
 
 }
