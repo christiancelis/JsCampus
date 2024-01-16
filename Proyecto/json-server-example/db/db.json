@@ -1,35 +1,81 @@
-
 {
-	"user":{
-		"IdUser":"1",
-		"NombreUser":"Christian",
-		"ApellidoUser":"Celis",
-		"Correo":"correodeprueba@gmail.com",
-		"Contraseña":"123",
-		"Status":"Activo",
-		"Rol":"Admin"
-	},
-	"Comentario":{
-		"IdComentario":"1",
-		"Comentario":"Aqui Pueden Comentar",
-		"Reaccion":"2",
-		"UserId":"1"	
-	},
-	"Compra":{
-		"idCompra":"1",
-		"UserId":"1",
-		"TotalCompra": 2000000
-	},
-	"servicio":{
-		"IdServicio":"001",
-		"NombreServicio":"Landing-Page",
-		"PrecioServicio": 2000000,
-		"UserId":"1"
-	},
-	"AgregarServicio":{
-		"idAgregarServicio":"1",
-		"CompraId":"1",
-		"ServicioId":"001"
-	}
-
+  "user": [
+    {
+      "IdUser": "1",
+      "NombreUser": "Christian",
+      "ApellidoUser": "Celis",
+      "Correo": "correodeprueba@gmail.com",
+      "Contraseña": "123"
+    },
+    {
+      "id": "0477",
+      "NombreUser": "",
+      "ApellidoUser": "perez",
+      "Correo": "unideportes@uu.com",
+      "Contraseña": "123"
+    },
+    {
+      "id": "9aea",
+      "NombreUser": "aa",
+      "ApellidoUser": "wada",
+      "Correo": "ada",
+      "Contraseña": "adwa"
+    },
+    {
+      "id": "4777",
+      "NombreUser": "juam",
+      "ApellidoUser": "pepe",
+      "Correo": "3",
+      "Contraseña": "1234"
+    },
+    {
+      "id": "ff0b",
+      "NombreUser": "",
+      "ApellidoUser": "",
+      "Correo": "",
+      "Contraseña": ""
+    },
+    {
+      "id": "26d9",
+      "NombreUser": "",
+      "ApellidoUser": "",
+      "Correo": "",
+      "Contraseña": ""
+    },
+    {
+      "id": "4c6a",
+      "NombreUser": "pepe",
+      "ApellidoUser": "perez",
+      "Correo": "unideportes@uu.com",
+      "Contraseña": "123"
+    }
+  ],
+  "Comentario": [
+    {
+      "IdComentario": "1",
+      "Comentario": "Aqui Pueden Comentar",
+      "Reaccion": "2",
+      "UserId": "1"
+    }
+  ],
+  "Compra": [
+    {
+      "idCompra": "1",
+      "UserId": "1",
+      "TotalCompra": 2000000
+    }
+  ],
+  "servicio": [
+    {
+      "IdServicio": "001",
+      "NombreServicio": "Landing-Page",
+      "PrecioServicio": 2000000,
+      "UserId": "1"
+    }
+  ],
+  "AgregarServicio": {
+    "idAgregarServicio": "1",
+    "CompraId": "1",
+    "ServicioId": "001"
+  }
 }

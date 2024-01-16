@@ -1,12 +1,12 @@
 import { post } from "../models/post.js"; //AGREGAR
-import { get } from "./../models/get.js"; //OBTENER
+import { get } from "../models/get.js"; //OBTENER
 import { put } from "../models/put.js"  //ACTUALIZAR
-import { delet } from "./../models/delete.js"; //BORRAR
+import { delet } from "../models/delete.js"; //BORRAR
 
-import { llenarFormulario, llenarSelect } from "./../views/utils.js";
+
 
 export function controlador(formu, event, entidad, elemformu) {
-  const URL = "http://localhost:4000/"; 
+  const URL = "http://localhost:4000/";
   let url = "";
   
   const datos = formu !== null ? Object.fromEntries(new FormData(formu)) : null;
@@ -15,6 +15,7 @@ export function controlador(formu, event, entidad, elemformu) {
   switch (value) {
     case "Agregar":
       url = URL + entidad;
+      console.log(datos)
       post(url, datos);
       formu.reset();
       break;
@@ -22,8 +23,7 @@ export function controlador(formu, event, entidad, elemformu) {
     case "Buscar":
       url = `${URL}${entidad}/${datos !== null ? datos.id : ""}`;
       let data = get(url, formu)        // Utilizar los datos obtenidos
-      if (formu !== null) llenarFormulario(formu, data);
-      llenarSelect(data, elemformu);
+      console.log(data)
       ;
       break;
     case "Modificar":
