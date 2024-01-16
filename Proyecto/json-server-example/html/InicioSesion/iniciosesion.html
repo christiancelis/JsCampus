@@ -7,34 +7,23 @@
     <link rel="stylesheet" href="./iniciosesion.css">
 </head>
 <body>
-
+    <a href="../../../Servicios/servicios.html">salir</a>
     <form action="">
+        <h1>Iniciar Sesion</h1>
+        <label for="Correo">Correo</label>
+        <input type="email" name="Correo" id="Correo">
 
-            <h1>Iniciar Sesion</h1>
+        <label for="Contraseña">Contraseña</label>
+        <input type="password" name="Contraseña" id="Contraseña">
 
-            <label for="NombreUser">Nombre</label>
-            <input type="text" name="NombreUser" id="NombreUser">
-
-            <label for="ApellidoUser">Apellidos</label>
-            <input type="text" name="ApellidoUser" id="ApellidoUser">
-
-            <label for="Correo">Correo</label>
-            <input type="email" name="Correo" id="Correo">
-
-            <label for="Contraseña">Contraseña</label>
-            <input type="password" name="Contraseña" id="Contraseña">
-            <div class="botonera">
-                <input type="button" value="Agregar" id="agregar" name="agregar" />
-                <input type="button" value="Buscar" id="buscar" name="buscar" />
-                <input type="button" value="Modificar" id="modificar" name="modificar" />
-                <input type="button" value="Borrar" id="borrar" name="borrar" />
-            </div>
+        <div class="botonera">
+            <input type="button" value="iniciarSesion" id="iniciarSesion" name="iniciarSesion"/>
         </div>
-    </form>
+    </div>
+</form>
+<p>No te has registrado ingresa <span><a href="./registro.html">Aqui</a></span></p>
 
-    <script src="../../views/iniciosesion.js" type="module"></script>
-
-
+<script src="../../views/iniciosesion.js" type="module"></script>
     
 </body>
 </html>

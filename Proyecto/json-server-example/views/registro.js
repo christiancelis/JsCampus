@@ -7,5 +7,3 @@ formu.addEventListener("click", (e) => {
   controlador(formu, e, "user");
   e.stopPropagation();
 });
-
-

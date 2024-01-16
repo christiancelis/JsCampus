@@ -61,6 +61,11 @@ nav .logo img{
     width: 130px;
 }
 
+/* .nav-elements{
+    display: flex;
+    justify-content: space-around;
+} */
+
 .nav-elements ul{
     display: none;
 }
@@ -162,6 +167,27 @@ nav .logo img{
     font-weight: 700;
     }
 
+    .Carrito img{
+        width: 40px;
+    }
+
+    .Carrito{
+        position: relative;
+    }
+
+    .Carrito div{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: red;
+        width: 15px;
+        height: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+    }
+
 
 @media screen and (min-width:750px) {
     .cuatro{
@@ -184,6 +210,13 @@ nav .logo img{
     nav .logo img{
         width: 180px;
     }
+    .nav-elements{
+        display: flex;
+        justify-content: space-around;
+        gap: 50px;
+        align-items: center;
+    }
+
     
     .nav-elements .listaNav{
         display: flex;

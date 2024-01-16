@@ -4,8 +4,12 @@ import { put } from "../models/put.js"  //ACTUALIZAR
 import { delet } from "../models/delete.js"; //BORRAR
 
 
+import { nb } from "../../Servicios/servicios.js";
 
-export function controlador(formu, event, entidad, elemformu) {
+
+
+
+export async function controlador(formu, event, entidad, elemformu) {
   const URL = "http://localhost:4000/";
   let url = "";
   
@@ -36,5 +40,14 @@ export function controlador(formu, event, entidad, elemformu) {
       delet(url);
       formu.reset;
       break;
+      case "iniciarSesion":
+        url = URL + entidad + `/?Correo=${datos.Correo}`;
+        let a = await get(url,datos)
+        await nb(a[0])
+        break;
+      
   }
+  
 }
+
+

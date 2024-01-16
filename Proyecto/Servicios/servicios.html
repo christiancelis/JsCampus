@@ -20,12 +20,17 @@
             </div>
             <div class="nav-elements">
                 <ul class="listaNav">
+                    <li class="NomUser">name</li>
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="../QuienesSomos/QuienesSomos.html">Quienes Somos</a></li>
                     <li><a href="./servicios.html">Servicios</a></li>
                     <li><a href="../Contacto/Contacto.html">Contacto</a></li>
-                    <li><a href="">Iniciar Sesión</a></li>
+                    <li><a href="../json-server-example/html/InicioSesion/iniciosesion.html">Iniciar Sesión</a></li>
                 </ul>
+                <div class="Carrito">
+                    <img src="../assets/PaginaPrincipal/carrito-de-compras.png" alt="">
+                    <div class="numeroCarrito">0</div>
+                </div>
                 <div class="menu-hamburguesa">
                     <img id="menu-img" src="../assets/PaginaPrincipal/menu-hamburguesa.png" alt="menu-hamburguesa">
                 </div>
@@ -55,7 +60,7 @@
                         <li>Hosting por 1 año</li>
                     </ul>
                     <span> $2.000.000</span>
-                    <button>Adquirir</button>
+                    <button class="btn-cards" id="btn1">Adquirir</button>
                 </section>
                 <section class="card medio">
                     <h1>Plan Medio</h1>
@@ -68,7 +73,7 @@
                         <li>2 Cuentas de administración</li>
                     </ul>
                     <span> $3.500.000</span>
-                    <button>Adquirir</button>
+                    <button class="btn-cards" id="btn2">Adquirir</button>
                 </section>
             </div>
           
@@ -173,10 +178,8 @@
             <p>@Copyright 2024 <span>SftDev. SA.</span></p>       
          </div>
         </article>
-    </footer>  
+    </footer>
 
-
-
-    
+    <script src="../Servicios/servicios.js" type="module"></script>
 </body>
 </html>

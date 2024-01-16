@@ -1,7 +1,7 @@
 {
   "user": [
     {
-      "IdUser": "1",
+      "id": "1",
       "NombreUser": "Christian",
       "ApellidoUser": "Celis",
       "Correo": "correodeprueba@gmail.com",
@@ -13,42 +13,8 @@
       "ApellidoUser": "perez",
       "Correo": "unideportes@uu.com",
       "Contraseña": "123"
-    },
-    {
-      "id": "9aea",
-      "NombreUser": "aa",
-      "ApellidoUser": "wada",
-      "Correo": "ada",
-      "Contraseña": "adwa"
-    },
-    {
-      "id": "4777",
-      "NombreUser": "juam",
-      "ApellidoUser": "pepe",
-      "Correo": "3",
-      "Contraseña": "1234"
-    },
-    {
-      "id": "ff0b",
-      "NombreUser": "",
-      "ApellidoUser": "",
-      "Correo": "",
-      "Contraseña": ""
-    },
-    {
-      "id": "26d9",
-      "NombreUser": "",
-      "ApellidoUser": "",
-      "Correo": "",
-      "Contraseña": ""
-    },
-    {
-      "id": "4c6a",
-      "NombreUser": "pepe",
-      "ApellidoUser": "perez",
-      "Correo": "unideportes@uu.com",
-      "Contraseña": "123"
     }
+    
   ],
   "Comentario": [
     {
