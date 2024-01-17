@@ -2,6 +2,7 @@ import { post } from "../models/post.js"; //AGREGAR
 import { Verificar, get } from "../models/get.js"; //OBTENER
 import { put } from "../models/put.js"  //ACTUALIZAR
 import { delet } from "../models/delete.js"; //BORRAR
+import { AgregarAlCarrito } from "../views/servicios.js";
 
 export async function controlador(formu, event, entidad, elemformu) {
   const URL = "http://localhost:4000/";
@@ -41,7 +42,6 @@ export async function controlador(formu, event, entidad, elemformu) {
       formu.reset;
       break;
     case "Iniciar Sesión":
-      if(localStorage)
       url = URL + entidad + `/?Correo=${datos.Correo}`;
       get(url,datos).then(dt => {
         formu.reset
@@ -50,8 +50,17 @@ export async function controlador(formu, event, entidad, elemformu) {
         window.location.href = `  http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html?user=${dt[0].NombreUser} + " " + ${dt[0].ApellidoUser}`;      
       });
       break;
+    case "Adquirir":
+      if(!localStorage.getItem("estado")){
+        alert("Inicia Sesion")
+        localStorage.setItem("carrito",0)
+      }else{
+        AgregarAlCarrito(event)
+      }
+      // url = URL + entidad +${datos}`;
+     
+    break;
   }
-  
 }
 
 

@@ -1,6 +1,6 @@
 
-function main(){
-    if(localStorage.getItem("estado")){
+
+if(localStorage.getItem("estado")){
         opinicio = document.getElementById("opInicio")
         opinicio.textContent = "Cerrar Sesión"
         opinicio.style.color = "yellow"
@@ -10,28 +10,13 @@ function main(){
             alert("Sesion Terminada")
             window.location.reload()
             e.stopPropagation()
-        })        
-    }
+        })  
 
-    let us = document.getElementById("NomUser")
-    let dat = JSON.parse(localStorage.getItem("user"))
-    us.textContent = dat.NombreUser + " "+ dat.ApellidoUser
-
-    let numeroCarrito = document.querySelector(".numeroCarrito")
-    numeroCarrito.textContent = localStorage.getItem("ElementosCarrito")
+        let us = document.getElementById("NomUser")
+        let dat = JSON.parse(localStorage.getItem("user"))
+        us.textContent = dat.NombreUser + " "+ dat.ApellidoUser   
 }
 
-
-main()
-
-
-function AumentarNumCarrito(){
-    let numeroCarrito = document.querySelector(".numeroCarrito")
-    console.log("oprimi un boton")
-    ncarrito = Number(numeroCarrito.textContent)
-    localStorage.setItem("ElementosCarrito",ncarrito+1)
-    numeroCarrito.textContent = ncarrito+1
-  }
 
 ButtonNav = document.querySelector(".menu-hamburguesa")
 ButtonNav.addEventListener("click",(e)=>{
@@ -54,11 +39,6 @@ ButtonNav.addEventListener("click",(e)=>{
         }
     }
 })
-
-
-
-
-
 
 //Scroll Animation
 
