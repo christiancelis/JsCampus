@@ -3,12 +3,6 @@ import { get } from "../models/get.js"; //OBTENER
 import { put } from "../models/put.js"  //ACTUALIZAR
 import { delet } from "../models/delete.js"; //BORRAR
 
-
-import { nb } from "../../Servicios/servicios.js";
-
-
-
-
 export async function controlador(formu, event, entidad, elemformu) {
   const URL = "http://localhost:4000/";
   let url = "";
@@ -40,12 +34,24 @@ export async function controlador(formu, event, entidad, elemformu) {
       delet(url);
       formu.reset;
       break;
-      case "iniciarSesion":
-        url = URL + entidad + `/?Correo=${datos.Correo}`;
-        let a = await get(url,datos)
-        await nb(a[0])
-        break;
-      
+    case "iniciarSesion":
+      if(localStorage)
+      url = URL + entidad + `/?Correo=${datos.Correo}`;
+      // let dt =  await get(url,datos)
+      // nb(dt);
+  
+      get(url,datos).then(dt => {
+      let lista =  dt[0].NombreUser + " " + dt[0].ApellidoUser
+      localStorage.setItem("user",JSON.stringify(lista))
+      localStorage.setItem("estado","activo")
+        // let us = document.getElementById("NomUser");
+        // nb(dt, us);
+        // window.location.href = `http://127.0.0.1:5504/Proyecto/Servicios/servicios.html?user=${dt[0].NombreUser} + " " + ${dt[0].ApellidoUser}`;
+        
+      });
+
+ 
+      break;
   }
   
 }
