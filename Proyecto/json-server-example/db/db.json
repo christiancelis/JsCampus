@@ -20,7 +20,8 @@
       "IdComentario": "1",
       "Comentario": "Aqui Pueden Comentar",
       "Reaccion": "2",
-      "UserId": "1"
+      "UserId": "1",
+      "id": "696f"
     }
   ],
   "Compra": [
@@ -28,14 +29,23 @@
       "idCompra": "1",
       "UserId": "1",
       "TotalCompra": 2000000,
-      "FechaCompra":"12/02/2000"
+      "FechaCompra": "12/02/2000",
+      "id": "2983"
     }
   ],
-  "servicio": [
+  "serviciosAdquiridos": [
     {
-      "IdServicio": "001",
+      "id": "001",
       "NombreServicio": "Landing-Page",
       "PrecioServicio": 2000000,
+      "Cantidad": 2,
+      "UserId": "1"
+    },
+    {
+      "id": "002",
+      "NombreServicio": "Pagina",
+      "PrecioServicio": 2000000,
+      "Cantidad": 2,
       "UserId": "1"
     }
   ],

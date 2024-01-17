@@ -5,25 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/iniciosesion.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mada:wght@200..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a href="../index.html">salir</a>
-    <form action="">
-        <h1>Iniciar Sesion</h1>
-        <label for="Correo">Correo</label>
-        <input type="email" name="Correo" id="Correo">
 
-        <label for="Contraseña">Contraseña</label>
-        <input type="password" name="Contraseña" id="Contraseña">
-
-        <div class="botonera">
-            <input type="button" value="iniciarSesion" id="iniciarSesion" name="iniciarSesion"/>
-        </div>
+    <div class="containerInicio">
+        <a href="../index.html">Salir</a>
+        <form action="">
+            <h1>Iniciar Sesión</h1>
+            <label for="Correo">Correo</label>
+            <input type="email" name="Correo" id="Correo">
+    
+            <label for="Contraseña">Contraseña</label>
+            <input type="password" name="Contraseña" id="Contraseña">
+    
+            <div class="botonera">
+                <input type="button" value="Iniciar Sesión" id="Iniciar Sesión" name="Iniciar Sesión"/>
+            </div>
+    </form>
+    <p>No te has registrado aun , Ingresa <span><a href="./registro.html">Aqui</a></span></p>
     </div>
-</form>
-<p>No te has registrado ingresa <span><a href="./registro.html">Aqui</a></span></p>
-
+   
 <script src="../views/iniciosesion.js" type="module"></script>
+
     
 </body>
 </html>

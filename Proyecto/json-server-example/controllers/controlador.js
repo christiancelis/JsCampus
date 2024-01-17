@@ -1,5 +1,5 @@
 import { post } from "../models/post.js"; //AGREGAR
-import { get } from "../models/get.js"; //OBTENER
+import { Verificar, get } from "../models/get.js"; //OBTENER
 import { put } from "../models/put.js"  //ACTUALIZAR
 import { delet } from "../models/delete.js"; //BORRAR
 
@@ -11,11 +11,17 @@ export async function controlador(formu, event, entidad, elemformu) {
   const value = event.target.value;
 
   switch (value) {
-    case "Agregar":
+    case "Registrarse":
       url = URL + entidad;
       console.log(datos)
-      post(url, datos);
-      formu.reset();
+      Verificar(url,datos).then(dt => {
+          console.log(dt)
+          if(dt!= true){
+          post(url, datos);
+          formu.reset();
+          }
+          window.location.href = "http://127.0.0.1:5504/Proyecto/json-server-example/html/iniciosesion.html"
+      })
       break;
     case "CARGARSELECT":
     case "Buscar":
@@ -34,23 +40,15 @@ export async function controlador(formu, event, entidad, elemformu) {
       delet(url);
       formu.reset;
       break;
-    case "iniciarSesion":
+    case "Iniciar Sesión":
       if(localStorage)
       url = URL + entidad + `/?Correo=${datos.Correo}`;
-      // let dt =  await get(url,datos)
-      // nb(dt);
-  
       get(url,datos).then(dt => {
-      let lista =  dt[0].NombreUser + " " + dt[0].ApellidoUser
-      localStorage.setItem("user",JSON.stringify(lista))
-      localStorage.setItem("estado","activo")
-        // let us = document.getElementById("NomUser");
-        // nb(dt, us);
-        // window.location.href = `http://127.0.0.1:5504/Proyecto/Servicios/servicios.html?user=${dt[0].NombreUser} + " " + ${dt[0].ApellidoUser}`;
-        
+        formu.reset
+        localStorage.setItem("user",JSON.stringify(dt[0]))
+        localStorage.setItem("estado","activo")
+        window.location.href = `  http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html?user=${dt[0].NombreUser} + " " + ${dt[0].ApellidoUser}`;      
       });
-
- 
       break;
   }
   

@@ -20,12 +20,12 @@
             </div>
             <div class="nav-elements">
                 <ul class="listaNav">
-                    <li id="NomUser">name</li>
+                    <li id="NomUser"></li>
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="./QuienesSomos.html">Quienes Somos</a></li>
                     <li><a href="./servicios.html">Servicios</a></li>
                     <li><a href="./Contacto.html">Contacto</a></li>
-                    <li><a href="./iniciosesion.html">Iniciar Sesión</a></li>
+                    <li><a id="opInicio" href="./iniciosesion.html">Iniciar Sesión</a></li>
                 </ul>
                 <div class="Carrito">
                     <img src="../assets/PaginaPrincipal/carrito-de-compras.png" alt="">
@@ -45,7 +45,7 @@
     <section class="Content-servicios">
         <div class="title-servicios">
             <h1>Servicios</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id modi autem odit, tempora ex consequatur vitae asperiores maxime molestiae earum veniam fuga atque itaque quod officia voluptatum cupiditate quia fugiat.</p>
+            <p>Ofrecemos servicios de desarrollo web a medida, adaptados a tus necesidades y objetivos. Podemos crear desde páginas web simples y estáticas, hasta páginas web dinámicas y complejas, con funcionalidades avanzadas e integración con otras plataformas. Trabajamos con las mejores tecnologías y herramientas del mercado, y nos aseguramos de que tu página web sea rápida, segura, responsive y optimizada para los motores de búsqueda.</p>
         </div>
 
         <div class="Planes-servicios">
@@ -60,7 +60,10 @@
                         <li>Hosting por 1 año</li>
                     </ul>
                     <span> $2.000.000</span>
-                    <button class="btn-cards" id="btn1">Adquirir</button>
+                    <form action="">
+                        <button class="btn-cards" id="btn1">Adquirir</button>
+                    </form>
+                    
                 </section>
                 <section class="card medio">
                     <h1>Plan Medio</h1>
@@ -73,20 +76,23 @@
                         <li>2 Cuentas de administración</li>
                     </ul>
                     <span> $3.500.000</span>
-                    <button class="btn-cards" id="btn2">Adquirir</button>
+                    <form action="">
+                        <button class="btn-cards" id="btn2">Adquirir</button>
+                    </form>
+                  
                 </section>
             </div>
           
-            <section class="PlanEmpresarial">
+            <section class="PlanEmpresarial reveal">
                 <h1>Desarrollo Web Empresarial</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis facilis, commodi dicta consequuntur eius nostrum quisquam voluptate iure deserunt hic reiciendis ipsam sapiente ducimus quaerat dolorem maxime velit voluptates quibusdam.</p>
-                <button>Cotizar</button>
+                <p>Ofrecemos servicios de desarrollo web a medida, adaptados a tus necesidades y objetivos. Podemos crear desde páginas web simples y estáticas, hasta páginas web dinámicas y complejas, con funcionalidades avanzadas e integración con otras plataformas. Trabajamos con las mejores tecnologías y herramientas del mercado, y nos aseguramos de que tu página web sea rápida, segura, responsive y optimizada para los motores de búsqueda.</p>
+                <button id="cotizarPlan">Cotizar</button>
             </section>
         </div>  
     </section>
 
 
-    <section class="ContenidoProyectos">
+    <section class="ContenidoProyectos reveal">
         <h1>Proyectos de Referencia</h1>
         <div class="LineaR"></div>
 
@@ -180,6 +186,7 @@
         </article>
     </footer>
 
-    <script  src="../views/servicios.js"></script>
+    <script  src="../views/servicios.js" type="module"></script>
+    <script  src="../views/dinamic.js"></script>
 </body>
 </html>

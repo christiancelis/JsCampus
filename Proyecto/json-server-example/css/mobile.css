@@ -12,6 +12,10 @@ html{
     font-optical-sizing: auto;
 }
 
+#NomUser{
+    font-size: 1.6rem;
+}
+
 body{
     background-color: black;
     width: 100%;
@@ -26,8 +30,6 @@ body{
     background-color: black;
     color: white;
     border: 2px solid  #FAFF00;
-    
-
 }
 
 .reveal{
@@ -56,8 +58,13 @@ nav{
     align-items: center;
 }
 
+
 nav .logo img{
     width: 130px;
+}
+
+nav #opInicio{
+    font-size: 1.5rem;
 }
 
 .nav-elements ul{

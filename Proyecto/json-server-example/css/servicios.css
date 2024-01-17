@@ -34,11 +34,6 @@ body{
         padding: 30px;
 }
 
-#NomUser{
-    font-size: 1.6rem;
-}
-
-
 .title-servicios{
     display: flex;
     flex-direction: column;

@@ -19,6 +19,14 @@ body{
 }
 
 
+#NomUser{
+    font-size: 1.6rem;
+}
+
+nav #opInicio{
+    font-size: 1.5rem;
+}
+
 .reveal{
     position: relative;
     transform: translateY(80px);

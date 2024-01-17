@@ -1,7 +1,17 @@
-let btn1 = 1
-let btn2 = 1
+import { controlador } from "../controllers/controlador";
+
+const formu = document.querySelector("form");
+formu.addEventListener("click", (e) => {
+  e.preventDefault();
+  controlador(formu, e, "Servicio");
+  e.stopPropagation();
+});
+
+
+let btn1 = 1  ,  btn2 = 1
 
 let btncards = document.querySelector(".flex-cards")
+
 btncards.addEventListener("click",(e)=>{
     if(localStorage.getItem("estado")){
         if( e.target.id=="btn1" || e.target.id=="btn2" ){
@@ -32,27 +42,11 @@ btncards.addEventListener("click",(e)=>{
   e.stopPropagation()
 })
 
-function AumentarNumCarrito(){
-  let numeroCarrito = document.querySelector(".numeroCarrito")
-  console.log("oprimi un boton")
-  ncarrito = Number(numeroCarrito.textContent)
-  numeroCarrito.textContent = ncarrito+1
-}
-    // }else{
-    //     
-    //     window.location.href= "../json-server-example/html/InicioSesion/iniciosesion.html"
-    // }
-   
-    
-let us = document.getElementById("NomUser")
-us.textContent = JSON.parse(localStorage.getItem("user"))
 
-// export function nb(a, us){
-//   let lista =  a[0].NombreUser + " " + a[0].ApellidoUser
-//    console.log(lista)
 
-//   //  let us = document.getElementById("NomUser")
-// console.log(us);
-// us.textContent = "lista";  
-// }
-  
+cotizarPlan = document.getElementById("cotizarPlan")
+cotizarPlan.addEventListener("click",(e)=>{
+    e.preventDefault()
+    window.location.href = "http://127.0.0.1:5504/Proyecto/json-server-example/html/Contacto.html"
+    e.stopPropagation()
+})
