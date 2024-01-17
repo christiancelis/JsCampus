@@ -7,9 +7,9 @@ ButtonNav.addEventListener("click",(e)=>{
     NavElements = document.querySelector(".listaNav")
    
     if(NavElements.classList.toggle("visible")==true){
-        ImgHamburguesa.setAttribute("src","./assets/PaginaPrincipal/x-menu-hamburguesa.png")
+        ImgHamburguesa.setAttribute("src","../assets/PaginaPrincipal/x-menu-hamburguesa.png")
     }else{
-        ImgHamburguesa.setAttribute("src","./assets/PaginaPrincipal/menu-hamburguesa.png")
+        ImgHamburguesa.setAttribute("src","../assets/PaginaPrincipal/menu-hamburguesa.png")
     }
 })
 
