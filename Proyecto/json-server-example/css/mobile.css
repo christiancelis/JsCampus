@@ -32,17 +32,25 @@ body{
     border: 2px solid  #FAFF00;
 }
 
-.reveal{
-    position: relative;
-    transform: translateY(150px);
-    opacity: 0;
-    transition: all 1s ease;
+.Carrito img{
+    width: 40px;
 }
 
-.reveal.active{
-    transform: translateY(0px);
-    opacity: 1;
-    transition: all 1s ease;
+.Carrito{
+    position: relative;
+}
+
+.Carrito div{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
 }
 
 /*HeaderMobile----------------------*/

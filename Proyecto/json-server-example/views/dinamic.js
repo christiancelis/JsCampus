@@ -11,14 +11,13 @@ if(localStorage.getItem("estado")){
             e.stopPropagation()
         })  
 
-        // let numcarito = document.querySelector(".numeroCarrito")
-        // numcarito.textContent = localStorage.getItem("contadorCarrito")
+        let numcarito = document.querySelector(".numeroCarrito")
+        numcarito.textContent = localStorage.getItem("contadorCarrito")
 
         let us = document.getElementById("NomUser")
         let dat = JSON.parse(localStorage.getItem("user"))
         us.textContent = dat.NombreUser + " "+ dat.ApellidoUser   
 }
-
 
 let ButtonNav = document.querySelector(".menu-hamburguesa")
 ButtonNav.addEventListener("click",(e)=>{

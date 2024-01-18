@@ -19,6 +19,36 @@ body{
 }
 
 
+
+.infcar{
+    display: none;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 3;
+    top:100px;
+    right: 20px; 
+    width: 20%;
+    height: 20%;
+    padding: 40px;
+    background-color: red;
+}
+
+.activ{ 
+    display: block;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 3;
+    top:100px;
+    right: 20px; 
+    width: 20%;
+    height: 20%;
+    padding: 40px;
+    background-color: red;
+}
+
+
+
+
 #NomUser{
     font-size: 1.6rem;
 }
@@ -49,7 +79,6 @@ nav #opInicio{
     margin: 30px;
     background-color: black;
     color: white;
-
 }
 
 

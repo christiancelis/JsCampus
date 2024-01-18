@@ -3,6 +3,7 @@ import { Verificar, get ,devolverinfo} from "../models/get.js"; //OBTENER
 import { put } from "../models/put.js"  //ACTUALIZAR
 // import { delet } from "../models/delete.js"; //BORRAR
 import {idProducto} from "../views/servicios.js"
+import { ActualizarNumeroCarrito } from "../views/servicios.js";
 
 
 export async function controlador(formu, event, entidad) {
@@ -21,7 +22,14 @@ export async function controlador(formu, event, entidad) {
         if(dt!=false){
           localStorage.setItem("user",JSON.stringify(dt[0]))
           localStorage.setItem("estado","activo")
-          window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html`  
+          url = URL + `carrito/?UserId=${dt[0].id}`;
+          devolverinfo(url).then(dats=>{
+            if(dats){
+              let numCarrito = ActualizarNumeroCarrito(dats)
+              localStorage.setItem("contadorCarrito",numCarrito)
+            }
+          })
+          window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html`
         }
       });
     break;
@@ -53,10 +61,12 @@ export async function controlador(formu, event, entidad) {
               alert("Servicio 1 Agregado al carrito")
               localStorage.setItem("contadorCarrito",cont)
               let datos = {
+                id: dt[0].id,
                 productoId: idprod,
                 UserId:dat.id,
                 CantidadProducto:1
               }
+              localStorage.setItem("p1",JSON.stringify(datos))
               console.log(datos)
               post(url,datos)
             }else
@@ -73,9 +83,16 @@ export async function controlador(formu, event, entidad) {
                 UserId:dat.id,
                 CantidadProducto: dt[0].CantidadProducto + 1
               }
+              localStorage.setItem("p2",JSON.stringify(datos))
               console.log(datos)
               put(url,datos)
             }
+
+                url=""
+            url = URL + "producto";
+            devolverinfo(url).then(prod=>{
+              localStorage.setItem("productos",JSON-stringify(prod))
+        })
         })
       }     
     break;
