@@ -1,32 +1,24 @@
 import { controlador } from "../controllers/controlador.js";
 
+
+let entidades = ["carrito","producto"]
+
 const formu = document.querySelector("form");
 formu.addEventListener("click", (e) => {
   e.preventDefault();
-  controlador(formu, e, "user");
+  controlador(formu, e, entidades);
   e.stopPropagation();
 });
 
-let btn1= {
-    id:1,
-    Nombre:"Landing Page",
-    Precio:2000000,
-    Cantidad:1
-} 
 
-let btn2= {
-  id:2,
-  Nombre:"Pagina Media",
-  Precio: 3500000,
-  Cantidad:1
-} 
+localStorage.setItem("contadorCarrito",0)
 
- export function AgregarAlCarrito(e){
+ export function idProducto(e){
     if(e.target.id=="btn1"){
-      return btn1 
+      return "1"
     }
-    else if(e.target.id=="btn1"){
-        return btn2
+    else if(e.target.id=="btn2"){
+        return "2"
     }
 }
 
@@ -37,9 +29,9 @@ export function AumentarNumCarrito(){
   numeroCarrito.textContent = ncarrito+1
 }
 
-let cotizarPlan = document.getElementById("cotizarPlan")
-cotizarPlan.addEventListener("click",(e)=>{
-    e.preventDefault()
-    window.location.href = "http://127.0.0.1:5504/Proyecto/json-server-example/html/Contacto.html"
-    e.stopPropagation()
-})
+// let cotizarPlan = document.getElementById("cotizarPlan")
+// cotizarPlan.addEventListener("click",(e)=>{
+//     e.preventDefault()
+//     window.location.href = "http://127.0.0.1:5504/Proyecto/json-server-example/html/Contacto.html"
+//     e.stopPropagation()
+// })

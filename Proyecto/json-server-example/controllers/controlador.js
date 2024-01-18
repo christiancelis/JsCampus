@@ -1,8 +1,9 @@
 import { post } from "../models/post.js"; //AGREGAR
-import { Verificar, get } from "../models/get.js"; //OBTENER
+import { Verificar, get ,devolverinfo} from "../models/get.js"; //OBTENER
 import { put } from "../models/put.js"  //ACTUALIZAR
 import { delet } from "../models/delete.js"; //BORRAR
-import { AgregarAlCarrito } from "../views/servicios.js";
+import {idProducto} from "../views/servicios.js"
+
 
 export async function controlador(formu, event, entidad, elemformu) {
   const URL = "http://localhost:4000/";
@@ -19,9 +20,8 @@ export async function controlador(formu, event, entidad, elemformu) {
           console.log(dt)
           if(dt!= true){
           post(url, datos);
-          formu.reset();
           }
-          window.location.href = "http://127.0.0.1:5504/Proyecto/json-server-example/html/iniciosesion.html"
+          window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html`
       })
       break;
     case "CARGARSELECT":
@@ -47,15 +47,46 @@ export async function controlador(formu, event, entidad, elemformu) {
         formu.reset
         localStorage.setItem("user",JSON.stringify(dt[0]))
         localStorage.setItem("estado","activo")
-        window.location.href = `  http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html?user=${dt[0].NombreUser} + " " + ${dt[0].ApellidoUser}`;      
+        window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html?user=${dt[0].NombreUser} + " " + ${dt[0].ApellidoUser}`;      
       });
       break;
     case "Adquirir":
+      let cont = localStorage.getItem("contadorCarrito")
       if(!localStorage.getItem("estado")){
         alert("Inicia Sesion")
         localStorage.setItem("carrito",0)
       }else{
-        AgregarAlCarrito(event)
+        let dat = JSON.parse(localStorage.getItem("user"))
+        let idprod = idProducto(event)
+        url = URL + entidad[0] + `/?productoId=${idprod}&&UserId=${dat.id}`;
+        devolverinfo(url).then(dt=>{
+          console.log(dt)
+            if(dt==""){
+              cont++
+              localStorage.getItem("contadorCarrito")
+              let datos = {
+                productoId: idprod,
+                UserId:dat.id,
+                CantidadProducto:1
+              }
+              console.log(datos)
+              post(url,datos)
+            }else
+            if(dt!=""){
+              cont++
+              localStorage.setItem("contadorCarrito",cont)
+              url = URL + entidad[0] + `/${dt[0].id}`
+              console.log(dt.CantidadProducto)
+              let datos={
+                id: dt[0].id,
+                productoId: idprod,
+                UserId:dat.id,
+                CantidadProducto: dt[0].CantidadProducto + 1
+              }
+              console.log(datos)
+              put(url,datos)
+            }
+        })
       }
       // url = URL + entidad +${datos}`;
      

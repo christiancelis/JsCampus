@@ -21,6 +21,23 @@ export async function get(url, datos) {
       return null
     }
   }
+
+  export async function devolverinfo(url) {
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: {
+        "Content-Type": "application/json",
+        }
+      });
+      let  dt = await response.json();
+      return dt
+    } catch (error) {
+      console.error("Error:", error);
+      return null
+    }
+  }
+  
   
   
 export async function Verificar(url, datos) {

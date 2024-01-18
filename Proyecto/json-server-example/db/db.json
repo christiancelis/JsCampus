@@ -15,24 +15,36 @@
       "Contraseña": "123"
     }
   ],
-  "producto":
-  [
-      {
-        "id": "1",
-        "NombreServicio": "Landing-Page",
-        "PrecioServicio": 2000000
-      },
-      {
-          "id": "2",
-          "NombreServicio": "Pagina",
-          "PrecioServicio": 3500000
-      }
-  ],
-  "carrito":[
+  "producto": [
     {
-      "id":"1",
-      "productoId":"1",
-      "CantidadProducto":null
+      "id": "1",
+      "NombreServicio": "Landing-Page",
+      "PrecioServicio": 2000000
+    },
+    {
+      "id": "2",
+      "NombreServicio": "Pagina",
+      "PrecioServicio": 3500000
+    },
+    {
+      "id": "80b4",
+      "productoId": "1",
+      "UserId": "1",
+      "CantidadProducto": 1
+    }
+  ],
+  "carrito": [
+    {
+      "id": "d9e7",
+      "productoId": "1",
+      "UserId": "1",
+      "CantidadProducto": 5
+    },
+    {
+      "id": "f679",
+      "productoId": "2",
+      "UserId": "1",
+      "CantidadProducto": 5
     }
   ]
 }
