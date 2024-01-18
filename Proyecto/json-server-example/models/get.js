@@ -35,10 +35,11 @@ export async function get(url, datos) {
         }
       });
       let  dt = await response.json();
+      alert(console.log(dt[0]))
       return dt
     } catch (error) {
       console.error("Error:", error);
-      return null
+      return []
     }
   }
   

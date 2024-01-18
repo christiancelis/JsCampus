@@ -19,11 +19,6 @@ infocarrito.addEventListener("click",(e)=>{
 
 }
 
-
-
-
-
-
 export function idProducto(e){
   if(e.target.id=="btn1"){
     return "1"
@@ -48,7 +43,7 @@ export function ActualizarNumeroCarrito(dt){
   }
    
 
-
+  
   // dt.array.forEach(element => {
   //     num += console.log(element.CantidadProducto)
   // });

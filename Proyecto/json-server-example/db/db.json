@@ -45,13 +45,13 @@
       "id": "0403",
       "productoId": "1",
       "UserId": "1",
-      "CantidadProducto": 9
+      "CantidadProducto": 12
     },
     {
       "id": "25a7",
       "productoId": "2",
       "UserId": "1",
-      "CantidadProducto": 7
+      "CantidadProducto": 8
     }
   ]
 }

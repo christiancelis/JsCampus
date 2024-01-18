@@ -103,6 +103,13 @@ nav .logo img{
     justify-content: space-around;
 } */
 
+.nav-elements{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+}
+
 .nav-elements ul{
     display: none;
 }
@@ -226,7 +233,7 @@ nav .logo img{
     }
 
 
-@media screen and (min-width:750px) {
+@media screen and (min-width:941px) {
     .cuatro{
         padding: 10px;
     }

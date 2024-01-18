@@ -23,10 +23,16 @@ export async function controlador(formu, event, entidad) {
           localStorage.setItem("user",JSON.stringify(dt[0]))
           localStorage.setItem("estado","activo")
           url = URL + `carrito/?UserId=${dt[0].id}`;
+          alert(dt[0].id)
           devolverinfo(url).then(dats=>{
+              alert(dats)
+            let numCarrito =""
             if(dats){
-              let numCarrito = ActualizarNumeroCarrito(dats)
+              numCarrito = ActualizarNumeroCarrito(dats)
               localStorage.setItem("contadorCarrito",numCarrito)
+            }else{
+               numCarrito = ActualizarNumeroCarrito()
+              localStorage.setItem("contadorCarrito",0)
             }
           })
           window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html`
