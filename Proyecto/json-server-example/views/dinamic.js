@@ -12,10 +12,15 @@ if(localStorage.getItem("estado")){
             e.stopPropagation()
         })  
 
+        // let numcarito = document.querySelector(".numeroCarrito")
+        // numcarito.textContent = localStorage.getItem("contadorCarrito")
+
+
         let us = document.getElementById("NomUser")
         let dat = JSON.parse(localStorage.getItem("user"))
         us.textContent = dat.NombreUser + " "+ dat.ApellidoUser   
 }
+
 
 
 ButtonNav = document.querySelector(".menu-hamburguesa")
@@ -42,7 +47,8 @@ ButtonNav.addEventListener("click",(e)=>{
 
 //Scroll Animation
 
-window.addEventListener("scroll",()=>{
+window.addEventListener("scroll",(e)=>{
+    e.preventDefault()
     let reveals = document.querySelectorAll(".reveal")
     for(let i=0;i<=reveals.length;i++){
         let windowheigth = window.innerHeight
@@ -55,4 +61,5 @@ window.addEventListener("scroll",()=>{
             reveals[i].classList.remove("active")
         }
     }
+    e.stopPropagation()
 })

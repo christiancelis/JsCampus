@@ -35,16 +35,28 @@
   ],
   "carrito": [
     {
-      "id": "d9e7",
+      "id": "600c",
       "productoId": "1",
       "UserId": "1",
-      "CantidadProducto": 5
+      "CantidadProducto": 7
     },
     {
-      "id": "f679",
+      "id": "493e",
       "productoId": "2",
       "UserId": "1",
-      "CantidadProducto": 5
+      "CantidadProducto": 4
+    },
+    {
+      "id": "3b02",
+      "productoId": "1",
+      "UserId": "0477",
+      "CantidadProducto": 9
+    },
+    {
+      "id": "43f2",
+      "productoId": "2",
+      "UserId": "0477",
+      "CantidadProducto": 8
     }
   ]
 }

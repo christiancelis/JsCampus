@@ -63,7 +63,7 @@ export async function controlador(formu, event, entidad, elemformu) {
           console.log(dt)
             if(dt==""){
               cont++
-              localStorage.getItem("contadorCarrito")
+              localStorage.setItem("contadorCarrito",cont)
               let datos = {
                 productoId: idprod,
                 UserId:dat.id,
