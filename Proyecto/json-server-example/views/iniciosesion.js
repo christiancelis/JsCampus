@@ -1,9 +1,8 @@
 import { controlador } from "../controllers/controlador.js";
 
-const formu = document.querySelector(".forminicio");
-formu.addEventListener("click", (e) => {
-  e.preventDefault();
-  controlador(formu, e, "user");
+const formw = document.querySelector(".forminicio");
+formw.addEventListener("click", (e) => {
+  controlador(formw, e, "user");
   e.stopPropagation();
 });
 

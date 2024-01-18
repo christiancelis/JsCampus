@@ -20,10 +20,6 @@ if(localStorage.getItem("estado")){
 }
 
 
-
-
-
-
 let ButtonNav = document.querySelector(".menu-hamburguesa")
 ButtonNav.addEventListener("click",(e)=>{
     e.stopPropagation()
@@ -46,21 +42,4 @@ ButtonNav.addEventListener("click",(e)=>{
     }
 })
 
-//Scroll Animation
 
-window.addEventListener("scroll",(e)=>{
-    e.preventDefault()
-    let reveals = document.querySelectorAll(".reveal")
-    for(let i=0;i<=reveals.length;i++){
-        let windowheigth = window.innerHeight
-        let revealtop = reveals[i].getBoundingClientRect().top 
-        let revealpoint = 150
-        if(revealtop<windowheigth-revealpoint){
-            reveals[i].classList.add("active")
-
-        }else{
-            reveals[i].classList.remove("active")
-        }
-    }
-    e.stopPropagation()
-})

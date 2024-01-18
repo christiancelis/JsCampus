@@ -5,7 +5,7 @@ import { put } from "../models/put.js"  //ACTUALIZAR
 import {idProducto} from "../views/servicios.js"
 
 
-export async function controlador(formu, event, entidad, elemformu) {
+export async function controlador(formu, event, entidad) {
   const URL = "http://localhost:4000/";
   let url = "";
   
@@ -21,15 +21,10 @@ export async function controlador(formu, event, entidad, elemformu) {
         if(dt!=false){
           localStorage.setItem("user",JSON.stringify(dt[0]))
           localStorage.setItem("estado","activo")
-          window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html  `
+          window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html`  
         }
       });
     break;
-
-      // url = URL +`carrito/?UserId=${datos.id}`;
-      // devolverinfo(url).then( dt =>{
-         
-      // })
     case "Registrarse":
       url=""
       url = URL + entidad;
@@ -41,13 +36,12 @@ export async function controlador(formu, event, entidad, elemformu) {
           }
           window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html`
       })
-      break;
+    break;
     case "Adquirir":
       url=""
       let cont = localStorage.getItem("contadorCarrito")
       if(!localStorage.getItem("estado")){
         alert("Inicia Sesion")
-        localStorage.setItem("carrito",0)
       }else{
         let dat = JSON.parse(localStorage.getItem("user"))
         let idprod = idProducto(event)
@@ -56,6 +50,7 @@ export async function controlador(formu, event, entidad, elemformu) {
           console.log(dt)
             if(dt==""){
               cont++
+              alert("Servicio 1 Agregado al carrito")
               localStorage.setItem("contadorCarrito",cont)
               let datos = {
                 productoId: idprod,
@@ -67,6 +62,7 @@ export async function controlador(formu, event, entidad, elemformu) {
             }else
             if(dt!=""){
               cont++
+              ("Servicios 2 Agregado al carrito")
               localStorage.setItem("contadorCarrito",cont)
               url=""
               url = URL + entidad + `/${dt[0].id}`
@@ -81,9 +77,7 @@ export async function controlador(formu, event, entidad, elemformu) {
               put(url,datos)
             }
         })
-      }
-      // url = URL + entidad +${datos}`;
-     
+      }     
     break;
     // case "Buscar":
     //   url=""

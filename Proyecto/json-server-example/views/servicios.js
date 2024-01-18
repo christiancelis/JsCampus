@@ -1,17 +1,20 @@
 import { controlador } from "../controllers/controlador.js";
 
-const formu = document.querySelector(".formserv");
-formu.addEventListener("click", (e) => {
-  e.preventDefault();
+
+if(localStorage.getItem("estado")){
+  const formu = document.querySelector(".formserv");
+  formu.addEventListener("click", (e) => {
   controlador(formu, e, "carrito");
   e.stopPropagation();
 });
+}
 
- export function idProducto(e){
-    if(e.target.id=="btn1"){
-      return "1"
-    }
-    else if(e.target.id=="btn2"){
-        return "2"
-    }
+
+export function idProducto(e){
+  if(e.target.id=="btn1"){
+    return "1"
+  }
+  else if(e.target.id=="btn2"){
+      return "2"
+  }
 }
