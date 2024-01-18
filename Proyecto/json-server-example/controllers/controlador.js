@@ -44,7 +44,6 @@ export async function controlador(formu, event, entidad, elemformu) {
     case "Iniciar Sesión":
       url = URL + entidad + `/?Correo=${datos.Correo}`;
       get(url,datos).then(dt => {
-        formu.reset
         localStorage.setItem("user",JSON.stringify(dt[0]))
         localStorage.setItem("estado","activo")
         window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html?user=${dt[0].NombreUser} + " " + ${dt[0].ApellidoUser}`;      

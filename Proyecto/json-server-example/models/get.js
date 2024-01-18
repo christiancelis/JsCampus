@@ -13,11 +13,10 @@ export async function get(url, datos) {
           return dt
         }else{
           alert("Valores Incorrectos")
+          return ""
         }
-      
     } catch (error) {
       console.error("Error:", error);
-      alert("Valores Incorrectos")
       return null
     }
   }
