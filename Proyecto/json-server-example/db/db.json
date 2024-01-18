@@ -13,6 +13,13 @@
       "ApellidoUser": "perez",
       "Correo": "unideportes@uu.com",
       "Contraseña": "123"
+    },
+    {
+      "id": "bf93",
+      "NombreUser": "ara",
+      "ApellidoUser": "are",
+      "Correo": "12334",
+      "Contraseña": "123"
     }
   ],
   "producto": [
@@ -38,13 +45,13 @@
       "id": "4fd8",
       "productoId": "1",
       "UserId": "1",
-      "CantidadProducto": 4
+      "CantidadProducto": 6
     },
     {
       "id": "1ada",
       "productoId": "2",
       "UserId": "1",
-      "CantidadProducto": 4
+      "CantidadProducto": 6
     },
     {
       "id": "f31a",

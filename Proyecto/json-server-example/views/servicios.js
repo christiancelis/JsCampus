@@ -1,12 +1,9 @@
 import { controlador } from "../controllers/controlador.js";
 
-
-let entidades = ["carrito","producto"]
-
-const formu = document.querySelector("form");
+const formu = document.querySelector(".formserv");
 formu.addEventListener("click", (e) => {
   e.preventDefault();
-  controlador(formu, e, entidades);
+  controlador(formu, e, "carrito");
   e.stopPropagation();
 });
 

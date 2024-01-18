@@ -1,7 +1,6 @@
 
-
 if(localStorage.getItem("estado")){
-        opinicio = document.getElementById("opInicio")
+        let opinicio = document.getElementById("opInicio")
         opinicio.textContent = "Cerrar Sesión"
         opinicio.style.color = "yellow"
         opinicio.addEventListener("click",(e)=>{
@@ -15,7 +14,6 @@ if(localStorage.getItem("estado")){
         // let numcarito = document.querySelector(".numeroCarrito")
         // numcarito.textContent = localStorage.getItem("contadorCarrito")
 
-
         let us = document.getElementById("NomUser")
         let dat = JSON.parse(localStorage.getItem("user"))
         us.textContent = dat.NombreUser + " "+ dat.ApellidoUser   
@@ -23,12 +21,15 @@ if(localStorage.getItem("estado")){
 
 
 
-ButtonNav = document.querySelector(".menu-hamburguesa")
+
+
+
+let ButtonNav = document.querySelector(".menu-hamburguesa")
 ButtonNav.addEventListener("click",(e)=>{
     e.stopPropagation()
-    index = document.querySelector(".index")
-    ImgHamburguesa = document.querySelector("#menu-img")
-    NavElements = document.querySelector(".listaNav")
+    let index = document.querySelector(".index")
+    let ImgHamburguesa = document.querySelector("#menu-img")
+    let NavElements = document.querySelector(".listaNav")
    
     if(NavElements.classList.toggle("visible")==true){
         if(index){

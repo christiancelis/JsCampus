@@ -1,7 +1,7 @@
 import { post } from "../models/post.js"; //AGREGAR
 import { Verificar, get ,devolverinfo} from "../models/get.js"; //OBTENER
 import { put } from "../models/put.js"  //ACTUALIZAR
-import { delet } from "../models/delete.js"; //BORRAR
+// import { delet } from "../models/delete.js"; //BORRAR
 import {idProducto} from "../views/servicios.js"
 
 
@@ -13,7 +13,25 @@ export async function controlador(formu, event, entidad, elemformu) {
   const value = event.target.value;
 
   switch (value) {
+    case "Iniciar Sesión":
+      url=""
+      url = URL + entidad + `/?Correo=${datos.Correo}`;
+      console.log(entidad)
+      get(url,datos).then(dt => {
+        if(dt!=false){
+          localStorage.setItem("user",JSON.stringify(dt[0]))
+          localStorage.setItem("estado","activo")
+          window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html  `
+        }
+      });
+    break;
+
+      // url = URL +`carrito/?UserId=${datos.id}`;
+      // devolverinfo(url).then( dt =>{
+         
+      // })
     case "Registrarse":
+      url=""
       url = URL + entidad;
       console.log(datos)
       Verificar(url,datos).then(dt => {
@@ -24,39 +42,8 @@ export async function controlador(formu, event, entidad, elemformu) {
           window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html`
       })
       break;
-    case "CARGARSELECT":
-    case "Buscar":
-      url = `${URL}${entidad}/${datos !== null ? datos.id : ""}`;
-      let data = get(url, formu)        // Utilizar los datos obtenidos
-      console.log(data)
-      ;
-      break;
-    case "Modificar":
-      url = URL + entidad + `/${datos.id}`;
-      put(url, datos);
-      //formu.reset
-      break;
-    case "Borrar":
-      url = URL + entidad + `/${datos.id}`;
-      delet(url);
-      formu.reset;
-      break;
-    case "Iniciar Sesión":
-      url = URL + entidad + `/?Correo=${datos.Correo}`;
-      get(url,datos).then(dt => {
-        localStorage.setItem("user",JSON.stringify(dt[0]))
-        localStorage.setItem("estado","activo")
-      });
-
-      // url = URL +`carrito/?UserId=${datos.id}`;
-      // devolverinfo(url).then( dt =>{
-         
-      // })
-
-
-      // window.location.href = `http://127.0.0.1:5504/Proyecto/json-server-example/html/servicios.html?user=${dt[0].NombreUser} + " " + ${dt[0].ApellidoUser}`;      
-      break;
     case "Adquirir":
+      url=""
       let cont = localStorage.getItem("contadorCarrito")
       if(!localStorage.getItem("estado")){
         alert("Inicia Sesion")
@@ -64,7 +51,7 @@ export async function controlador(formu, event, entidad, elemformu) {
       }else{
         let dat = JSON.parse(localStorage.getItem("user"))
         let idprod = idProducto(event)
-        url = URL + entidad[0] + `/?productoId=${idprod}&&UserId=${dat.id}`;
+        url = URL + entidad + `/?productoId=${idprod}&&UserId=${dat.id}`;
         devolverinfo(url).then(dt=>{
           console.log(dt)
             if(dt==""){
@@ -81,7 +68,8 @@ export async function controlador(formu, event, entidad, elemformu) {
             if(dt!=""){
               cont++
               localStorage.setItem("contadorCarrito",cont)
-              url = URL + entidad[0] + `/${dt[0].id}`
+              url=""
+              url = URL + entidad + `/${dt[0].id}`
               console.log(dt.CantidadProducto)
               let datos={
                 id: dt[0].id,
@@ -97,6 +85,25 @@ export async function controlador(formu, event, entidad, elemformu) {
       // url = URL + entidad +${datos}`;
      
     break;
+    // case "Buscar":
+    //   url=""
+    //   url = `${URL}${entidad}/${datos !== null ? datos.id : ""}`;
+    //   let data = get(url, formu)        // Utilizar los datos obtenidos
+    //   console.log(data)
+    //   ;
+    //   break;
+    // case "Modificar":
+    //   url=""
+    //   url = URL + entidad + `/${datos.id}`;
+    //   put(url, datos);
+    //   //formu.reset
+    //   break;
+    // case "Borrar":
+    //   url=""
+    //   url = URL + entidad + `/${datos.id}`;
+    //   delet(url);
+    //   formu.reset;
+    //   break;
   }
 }
 

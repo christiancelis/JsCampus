@@ -1,6 +1,6 @@
 
 export async function get(url, datos) {
-    try {
+  try {
       const response = await fetch(url, {
         method: "GET",
         headers: {
@@ -8,14 +8,19 @@ export async function get(url, datos) {
         }
       });
       let  dt = await response.json();
+
+      if(dt[0].Correo=="" || dt[0].Contraseña==""){
+        alert("Rellene Campos Vacios")
+        return false  
+      }
       if(datos.Correo==dt[0].Correo && datos.Contraseña==dt[0].Contraseña){
           alert("inicio sesion Satisfactorio")
           return dt
-        }else{
+      }else{
           alert("Valores Incorrectos")
-          return ""
-        }
-    } catch (error) {
+          return false
+      }
+    }catch(error) {
       console.error("Error:", error);
       return null
     }
