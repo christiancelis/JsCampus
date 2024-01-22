@@ -20,6 +20,18 @@
 const datos = []
 
 
+async function obtenerDatos(){
+    try {
+        const datosObtenidos = await getDatos()
+        console.table(datosObtenidos)
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+obtenerDatos()
+
+
 
 const getDatos = ()=>{
     return new Promise((resolve,reject)=>{
@@ -33,16 +45,6 @@ const getDatos = ()=>{
 )}
 
 
-async function obtenerDatos(){
-    try {
-        const datosObtenidos = await getDatos()
-        console.table(datosObtenidos)
-    } catch (error) {
-        console.log(error.message);
-    }
-}
-
-obtenerDatos()
 
 
 

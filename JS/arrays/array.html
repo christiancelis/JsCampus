@@ -7,13 +7,7 @@
 </head>
 <body>
     <script>
-        let marcas = new Array(5)
-        marcas = ["Lamborguini"]
 
-        let house = ["1BHK",25000,"2BK","50000"]
-
-
-       
         //pop elimina el ultimo
         //shift por delante
         //unshift agrega uno o mas elementos por delante
@@ -24,6 +18,12 @@
         //concat une dos arrays y devuelve uno nuevo
         //join devuelve los elementos en un array en una cadena separa de acuerdo a un patron especifico
         //indexof busca el indice del priner elemento
+
+        let marcas = new Array(5)
+        marcas = ["Lamborguini"]
+
+        let house = ["1BHK",25000,"2BK","50000"]
+
         let arr = ["apple", "banana","orange"]
         let index = arr.indexof("platano")
         console.log(index) //-1
@@ -48,7 +48,6 @@ for(const fruta of frutas){
 let curv8 = arr.map(e => e*0.8 +1)
 console.log(curv8)
 //filter devuelve un array con elementos que cumplan con una condicion
-
 let may3 = arr.filter(function(e){
     if(e>=3) return e
 
@@ -56,21 +55,15 @@ let may3 = arr.filter(function(e){
 
 console.log(may3)
 
-
 //reduce funcion que ejecuta funcion y devuelve un valor de un array
-
-
 let sumcurv8 = ar.reduce((c,e) => c + (e*0.8+1))
 console.log(sumcurv8.toFixed(2))
-
 
 //clonacion de array
 
 ar = ["a","b","c"]
 cloned = ar.slice()
-
 cloned[1] = "20"
-
 console.log(ar)
 console.log(cloned)
 

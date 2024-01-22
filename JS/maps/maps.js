@@ -10,6 +10,15 @@
 
 //creacion de un mapa
 
+
+// new Map() – crea el mapa.
+// map.set(clave, valor)) – almacena el valor asociado a la clave.
+// map.get(clave) – devuelve el valor de la clave. Será undefined si la clave no existe en map.
+// map.has(clave) – devuelve true si la clave existe en map, false si no existe.
+// map.delete(clave) – elimina el elemento con esa clave.
+// map.clear() – elimina todo de map.
+// map.size – tamaño, devuelve la cantidad actual de elementos.
+
 const frutas = new Map([["Manzanas",2500],["Peras",2000],["Banano",1500]])
 
 console.log(frutas)
