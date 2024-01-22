@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
 
-        // let user = new Object(); // sintaxis de "constructor de objetos"
+        // let empleados = new Object("juan); // sintaxis de "constructor de objetos"
         // let user = {};  // sintaxis de "objeto literal"
         // Obteniendo los valores de las propiedades del objeto:
         // alert( user.name ); // John
@@ -24,22 +15,18 @@
         // delete user["likes birds"];
 
         const obj = {
-            
             "empleados":[
                 {   "nombre":"juan perez",
-                    "apellido":"lopez",nombreCompleto: function(){
+                    "apellido":"lopez",
+                    nombreCompleto: function(){
                 return this.nombre +" "+  this.apellido}
                 },
                 {
                     "nombre": "ana","apellido":"gonzales",nombreCompleto: function(){
-                    return this.nombre +""+  this.apellido}
+                    return this.nombre + " " + this.apellido}
                 }
             ]
         }
 
-        console.log(obj.empleados[1].nombre)
-        console.log(obj.empleados[1].nombreCompleto())
-    </script>
-    
-</body>
-</html>
+        console.log(obj.empleados[0].nombre,obj.empleados[0].apellido)
+        console.log(obj.empleados[0].nombreCompleto())
