@@ -1,25 +1,30 @@
-array = [{"id":"1"},
-        {"id":"1"},
-        {"id":"2"}]
 
-fn = function (item) {
-    return item.id;
+array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+fn = function (n) {
+return String(n > 5);
 }
 
-function filtro(fn,array){
-    llaves = []
-    obj = new Object()
-    array.forEach(element => {
-        if(!llaves.(fn(element))){
-            llaves.push(fn(element))
-        }
-        
-    });
-
-    return llaves
+function agrupar(fn,array){ 
+    let a = new Map()
+    array.forEach((element)=>{
+            if(a.get(fn(element))===undefined){
+                lista = []
+                lista.push(element)
+                a.set(fn(element),lista)
+            }else{
+                lista.push(element)
+                a.set(fn(element),lista)
+            }
+      })
+    return a
 }
 
-console.log(filtro(fn,array))
+console.log(agrupar(fn,array))
+
+
+
+
+
 
 
 
