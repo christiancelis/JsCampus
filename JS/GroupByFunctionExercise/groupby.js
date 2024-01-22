@@ -9,12 +9,9 @@ function agrupar(fn,array){
     array.forEach((element)=>{
             if(a.get(fn(element))===undefined){
                 lista = []
-                lista.push(element)
-                a.set(fn(element),lista)
-            }else{
-                lista.push(element)
-                a.set(fn(element),lista)
             }
+            lista.push(element)
+            a.set(fn(element),lista)
       })
     return a
 }
