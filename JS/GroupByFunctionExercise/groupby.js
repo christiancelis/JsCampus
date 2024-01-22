@@ -6,38 +6,41 @@ fn = function (item) {
 return String(item.id);
 }
 
-function agrupar(fn,array){ 
-    let a = new Map()
-    array.forEach((element)=>{
-            if(a.get(fn(element))===undefined){
-                lista = []
-            }
-            lista.push(element)
-            a.set(fn(element),lista)
-      })
-    return a
-}
-
-console.log(agrupar(fn,array))
-
-// function groupBy(fn) {
-//     const output = new Map;
-//     array.forEach(element => {
-//         let dato ;
-//         if(output.has(fn(element))){
-//             dato = output.get(fn(element));
-//             dato.push(element)
-//         } else{
-//             dato = [element]
-//             output.set(fn(element),dato)
-//         }
-//         dato = [];
-//     });
-//     return output;
+// function agrupar(fn,array){ 
+//     let a = new Map()
+//     array.forEach((element)=>{
+//             if(a.get(fn(element))===undefined){
+//                 lista = []
+//             }
+//             lista.push(element)
+//             a.set(fn(element),lista)
+//       })
+//     return a
 // }
 
-// array.nuevoMetodo = groupBy;
-// console.log(array.nuevoMetodo(fn))
+// console.log(agrupar(fn,array))
+
+function groupBy(fn) {
+    const output = new Map;
+    array.forEach(element => {
+        let dato ;
+        if(output.has(fn(element))){
+            dato = output.get(fn(element));
+            dato.push(element)
+        } else{
+            dato = [element]
+            output.set(fn(element),dato)
+        }
+        dato = [];
+    });
+    return output;
+}
+
+array["groupby"] = groupBy;
+console.log(array.groupby(fn))
+
+
+console.log(array)
 
 
 
