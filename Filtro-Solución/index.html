@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sistema WEB CF ACME:</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>Sistema Web CF ACME</li>
+                <li id="NombreUsuario"></li>
+                <li id="CerraSesion"></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="credencials">
+        <form action="">
+            <h1>Iniciar Sesión</h1>
+            <label for="id">Usuario</label>
+            <input type="text" name="id" id="id">
+            <label for="pass">Contraseña</label>
+            <input type="password" name="pass" id="pass">
+            <input type="submit" name="sendCredencials" id="sendCredencials" value="Ingresar"></input>
+        </form>
+    </section>
+    <section class="RegistrarCompra" id="RegistrarCompra">
+        <form class="Regcompra" action="">
+            <h1>Registrar Compra</h1>
+            <label for="id">Usuario</label>
+            <input type="text" name="id" id="id2">
+            <input type="submit" id="consultar" name="consultar" value="consultar"  >
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" disabled>
+            <select name="Productos" id="Productos">
+                <option value="">Productos</option>
+                <option value="Perfume A">Perfume A</option>
+                <option value="Perfume B">Perfume B</option>
+                <option value="Perfume C">Perfume C</option>
+                <option value="Perfume D">Perfume D</option>
+                <option value="Perfume E">Perfume E</option>
+                <option value="Perfume F">Perfume F</option>
+                <option value="Perfume G">Perfume G</option>
+                <option value="Perfume H">Perfume H</option>
+                <option value="Perfume I">Perfume I</option>
+                <option value="Perfume J">Perfume J</option>
+            </select>
+            <input type="submit" disabled name="GuardarCompra" id="GuardarCompra" value="Guardar"></input>
+        </form>
+    </section>
+    <script src="./View/iniciosesion.js" type="module"></script>
+</body>
+</html>
