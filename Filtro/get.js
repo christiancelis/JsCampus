@@ -7,8 +7,18 @@ export async function get(url, datos) {
         }
       });
       let  dt = await response.json()
-      console.log(dt)
-      returndt
+      
+      if(dt[0].id=="" || dt[0].id==""){
+        alert("Rellene Campos Vacios")
+        return false  
+      }
+      if(datos.id==dt[0].id && datos.pass==dt[0].pass){
+          alert("inicio sesion Satisfactorio")
+          return dt
+      }else{
+          alert("Valores Incorrectos")
+          return false
+      }
 
 
     }catch(error) {

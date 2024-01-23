@@ -4,16 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="stylesheet" href="acme.css">
 </head>
 <body>
 
-    <form id="formureg" action="">
-        <label for="id">Cedula</label>
-        <input type="number" name="id" id="id">
-        <label for="pass">Contraseña</label>
-        <input type="password" name="pass" id="pass">
-        <input id="enviar" type="submit" value="Login">
-    </form>
+    <header>
+        <nav>
+            <ul>
+                <li id="user"></li>
+                <li id="sesion">Cerrar Sesion</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="contenedor" class="contenedor">
+
+        <form id="formureg" action="">
+            <label for="id">Cedula</label>
+            <input type="number" name="id" id="id">
+            <label for="pass">Contraseña</label>
+            <input type="password" name="pass" id="pass">
+            <input id="enviar" type="submit" value="Login">
+        </form>
+
+    </div>
+
+
+    <div id="infoadmin" class="infoadmin">
+        <section>
+            <h1>Compra</h1>
+            <form class="formCompra" action="">
+                <label for="idc">Id compra</label>
+                <input type="number" name="id" id="idc">
+                <label for="usuarioId">Id Usuario</label>
+                <input type="text" name="usuarioId" id="usuarioId">
+                <label for="perfumeId">Id de perfume</label>
+                <input type="text" name="perfumeId" id="perfumeId">
+                <label for="comentarios">Comentarios</label>
+                <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea>
+                <input type="submit">
+            </form>
+        </section>
+    </div>
+
     <script src="eventoRegistro.js" type="module">    
     </script>
 </body>
