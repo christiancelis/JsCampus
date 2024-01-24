@@ -73,9 +73,10 @@ export async function controlador(formu, event, entidad) {
                     let ob = (registrosusuario[0])
                     put(url,ob)
                 }
+                
             })
-
-
+            event.preventDefault()
+            event.stopPropagation()
         break;
            
     }
@@ -84,7 +85,7 @@ export async function controlador(formu, event, entidad) {
 
 
 function Obtenerdia(){
-    let fecha = new Date
-    let formatodia = `${fecha.getFullYear} - ${fecha.getMonth} - ${fecha.getDay}`
+    let fecha = new Date()
+    let formatodia = `${fecha.getFullYear()} - ${fecha.getMonth()+1} - ${fecha.getDate()}`
     return formatodia
 }
