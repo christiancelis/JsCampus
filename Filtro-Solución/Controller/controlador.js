@@ -1,5 +1,7 @@
 import { devolverinfo, get } from "../Model/get.js";
+import {post} from "../Model/post.js"
 import {CambiarVista, ObtenerCliente} from "../View/iniciosesion.js"
+import {put} from "../Model/put.js"
 
 export async function controlador(formu, event, entidad) {
     const URL = "http://localhost:4001/";
@@ -32,21 +34,44 @@ export async function controlador(formu, event, entidad) {
             url=""
             console.log(datos)
             url = URL + "perfumes" + `/?name=${datos.Productos}`;
-            devolverinfo(url).then((product)=>{
-                console.log("idproducto", product[0].id)
+            let  idproducto = await devolverinfo(url).then((product)=>{
+               let  idproducto = product[0].id
+                return idproducto
             })
             url = URL + "registros";
-            devolverinfo(url).then((registros)=>{
-                console.log("numeroregistros", registros.length)
+            let  idRegistros = await devolverinfo(url).then((registros)=>{
+                let idRegistros = registros.length + 1
+                return idRegistros
             })
             console.log(datos.id)
             url = URL + "registros" + `/?usuarioId=${datos.id}`;
             devolverinfo(url).then((registrosusuario)=>{
-                if(registrosusuario===""){
-                    console.log("No hay compras asociadas a este cliente")
+                let fecha = Obtenerdia()
+                if(registrosusuario.length===0){
+                   
+                    let obj = {
+                        "id": `${idRegistros}`,
+                        "usuarioId": `${datos.id}`,
+                        "compras": 
+                        [
+                        {
+                        "fecha": `${fecha}`,
+                        "perfumeId": `${idproducto}`
+                        }
+                        ]
+                    }
+                    url = URL + "registros"
+                    post(url,obj)
+                    console.log("Compra exitosa")
                 }else{
-                    console.log("usuario tiene registro")
-                    let dia = Obtenerdia()
+                    let obj ={
+                            "fecha": `${fecha}`,
+                            "perfumeId": `${idproducto}`
+                    }
+                    console.log(registrosusuario[0].compras.push(obj))
+                    url = URL + "registros" + `/${registrosusuario[0].id}`
+                    let ob = (registrosusuario[0])
+                    put(url,ob)
                 }
             })
 
@@ -60,9 +85,6 @@ export async function controlador(formu, event, entidad) {
 
 function Obtenerdia(){
     let fecha = new Date
-    let dia = fecha.getDay()
-   let  mes = fecha.getMonth()
-   let  año = fecha.getFullYear()
-    let formatodia = `${año}-${mes}-${dia}`
+    let formatodia = `${fecha.getFullYear} - ${fecha.getMonth} - ${fecha.getDay}`
     return formatodia
 }

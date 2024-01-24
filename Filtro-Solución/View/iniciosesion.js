@@ -16,12 +16,14 @@ Regcompra.addEventListener("click",(e)=>{
 
 let prods = document.getElementById("Productos")
 prods.addEventListener("click",(e)=>{
+    e.preventDefault()
     const btnGuardarCompra = document.getElementById("GuardarCompra")
     if(prods.value != ""){
         btnGuardarCompra.removeAttribute("disabled")
     }else{
         btnGuardarCompra.setAttribute("disabled", "true")
     }
+    e.stopPropagation()
 })
 
 
